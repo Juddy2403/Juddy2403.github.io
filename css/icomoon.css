@@ -3834,3 +3834,7 @@
 .icon-world2:before {
   content: "\ed91";
 }
+.icon-discord:before {
+  content: "\e123";
+  color: #7289da;
+}

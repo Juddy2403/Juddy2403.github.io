@@ -1313,3 +1313,18 @@ input[type="text"] {
 
 .js .animate-box {
   opacity: 0; }
+
+.about-img-top {
+  padding-top: 7em;
+}
+.fa-discord {
+  /* Match the size and style of your existing icons */
+  font-size: inherit;
+  color: inherit;
+}
+
+/* If needed, add hover effects to match your existing icons */
+.colorlib-social-icons a:hover .fa-discord {
+  /* Match your existing hover effects */
+  color: inherit;
+}
