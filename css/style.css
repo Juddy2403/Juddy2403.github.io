@@ -1328,3 +1328,24 @@ input[type="text"] {
   /* Match your existing hover effects */
   color: inherit;
 }
+
+.tags-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.tag {
+  display: inline-block;
+  background: #f8f9fa;
+  color: #CA82F8;
+  padding: 5px 15px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.tag:hover {
+  background: #e9ecef;
+  cursor: pointer;
+}
