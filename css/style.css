@@ -1356,7 +1356,7 @@ input[type="text"] {
   color: #CA82F8;
   padding: 5px 15px;
   margin: 5px;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 16px;
   transition: background 0.3s ease;
 }
@@ -1367,3 +1367,18 @@ input[type="text"] {
   color: #b94efc;
 }
 
+.social-cv-container {
+  display: flex;
+  align-items: center;
+}
+
+.colorlib-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.cv-button {
+  margin-left: 200px;
+}
