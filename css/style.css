@@ -1858,12 +1858,33 @@ input[type="text"] {
     display: flex;
     flex-direction: column;
     position: fixed;
+    box-shadow: 10px 0 20px -10px rgba(0, 0, 0, 0.35);
     top: 0;
     left: 0;
-    width: 13%; /* Adjust width as needed */
+    width: 13%;
     height: 100%;
-    z-index: 1000; /* Ensure it stays on top */
+    z-index: 1000;
+    transform: translateX(-80%);
+    transition: transform 0.3s ease;
+    background-color: #f8f9fa; /* fallback if no image */
 }
+.left-table::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
+    pointer-events: none;
+}
+
+
+/* Slide in when parent is hovered */
+.sidebar-hover:hover .left-table {
+    transform: translateX(0%);
+}
+
 .table-content span {
     display: block;
     /*color: #9b9b9b;*/
