@@ -1460,6 +1460,7 @@ input[type="text"] {
 .colorlib-social-icons{
 	a{
 		&:hover, &:focus{
+			color: #b04bf5 !important;
 			text-decoration: none !important;
 		}
 	}

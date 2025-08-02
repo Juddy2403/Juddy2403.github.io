@@ -1846,10 +1846,13 @@ input[type="text"] {
 }
 
 .left-table {
+    display: flex;
+    flex-direction: column;
+
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px; /* Adjust width as needed */
+    width: 13%; /* Adjust width as needed */
     height: 100%;
     background-color: #e0e0e0; /* Background color for the table */
     z-index: 1000; /* Ensure it stays on top */
@@ -1979,4 +1982,3 @@ html {
     background-color: #CA82F8;
     width: 50%; /* Adjust width as needed */
 }
-
