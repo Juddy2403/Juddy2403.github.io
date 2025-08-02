@@ -45,8 +45,20 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
+<style>
+    body {
+        background-image: url('images/background.jpg'); /* Adjust path as needed */
+        background-size: cover;         /* Makes the image cover the whole page */
+        background-repeat: no-repeat;   /* Prevents tiling */
+        background-position: center;    /* Centers the image */
+        background-attachment: fixed;   /* Optional: keeps it fixed on scroll */
+    }
+</style>
+
 <body>
+
 <div class="left-table">
+    <img class="background-image" src= "images/border.jpg" alt="Background Image">
     <div style="text-align: center;">
         <img src="images/logo.png" alt="Logo" style="width: 80px; height: 80px; margin-top:40px; object-fit: cover;">
     </div>
@@ -101,7 +113,9 @@
                                     Development</strong>.</p>
                             <p>Through hands-on projects, experimentation, and constant learning, I’ve explored the
                                 world of gameplay programming — and I’d love to share that journey with you.</p>
-                            <a href="files/CV.pdf" class="click-button">Download CV</a>
+                            <div class="click-button">
+                                <a href="files/CV.pdf">Download CV</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -113,7 +127,7 @@
     <div id="colorlib-work">
         <div class="container">
             <div class="row text-center">
-                <h2 class="bold">Works</h2>
+                <h2 class="bold unselectable">Works</h2>
             </div>
             <div class="row">
                 <div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading"><span>Portfolio</span>
@@ -150,7 +164,7 @@
                                 <p>This project started as a way to learn Unreal Engine’s basics, but as I explored its
                                     features, I grew to love the engine. I spent 6 weeks working daily on what
                                     became my biggest indie project yet.</p>
-                                <p class="read"><a href="echo-of-the-past.html">View details</a></p>
+                                <p class="read hover-underline"><a href="echo-of-the-past.html">View details</a></p>
                             </div>
                         </div>
                     </div>
@@ -175,7 +189,7 @@
                             <div class="desc">
                                 <p>The largest group project I’ve worked on, where the game’s unique mechanics pushed
                                     our design skills to the limit and led to something truly special.</p>
-                                <p class="read"><a href="reel-it-in.html">View Details</a></p>
+                                <p class="read hover-underline"><a href="reel-it-in.html">View Details</a></p>
                             </div>
                         </div>
                     </div>
@@ -199,7 +213,7 @@
                             <div class="desc">
                                 <p>My first Unity project, where I ventured into horror and took on the full design and
                                     scripting of the game. It’s an indie creation I’m truly proud of.</p>
-                                <p class="read"><a href="#">View details</a></p>
+                                <p class="read hover-underline"><a href="#">View details</a></p>
                             </div>
                         </div>
                     </div>
@@ -224,7 +238,7 @@
                                 <p>One of my most challenging projects to date, this experience greatly enhanced my
                                     coding skills. Guided by game design patterns, I was able
                                     to make my very own game engine from scratch.</p>
-                                <p class="read"><a href="#">View details</a></p>
+                                <p class="read hover-underline"><a href="#">View details</a></p>
                             </div>
                         </div>
                     </div>
@@ -510,16 +524,17 @@
                         <p>Whether it’s about a project, opportunity, or just a shared passion for game development —
                             I’d love
                             to hear from you.</p>
-                        <p><a href="#">ioanaraileanu@yahoo.com</a></p>
-                        <p class="colorlib-social-icons"><a href="https://github.com/Juddy2403"
-                                                            target="_blank" rel="noopener noreferrer"><i
-                                class="icon-github"></i>
-                        </a> <a href="https://www.linkedin.com/in/ioana-raileanu-147725252/"
-                                target="_blank" rel="noopener noreferrer"><i
-                                class="icon-linkedin2"></i></a>
-                            <a href="https://discord.com/users/519186019564912680"
-                               target="_blank" rel="noopener noreferrer"
-                            ><i class="fa-brands fa-discord"></i></a>
+                        <p ><a href="mailto:ioanaraileanu@yahoo.com" class="text-with-other-color">ioanaraileanu@yahoo.com</a></p>
+                        <p class="colorlib-social-icons">
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/Juddy2403">
+                                <i class="icon-github"></i>
+                            </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ioana-raileanu-147725252/">
+                                <i class="icon-linkedin2"></i>
+                            </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://discord.com/users/519186019564912680">
+                                <i class="fa-brands fa-discord"></i>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -531,7 +546,7 @@
                         Copyright &copy;
                         <script>document.write(new Date().getFullYear());</script>
                         All rights reserved | This template is made with <i class="icon-heart4" aria-hidden="true"></i>
-                        by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        by <a class="text-with-other-color" href="https://colorlib.com"  target="_blank">Colorlib</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>

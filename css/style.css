@@ -5,7 +5,10 @@
     font-weight: normal;
     font-style: normal;
 }
-
+:root {
+        --accent-color: #D0A79D;
+    --accent-color-hover: #A47163;
+}
 /* =======================================================
 *
 * 	Template Style 
@@ -41,15 +44,15 @@ body.menu-show {
 }
 
 a {
-    color: #CA82F8;
+    color: var(--accent-color);
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
 }
 
 a:hover {
-    text-decoration: underline;
-    color: #CA82F8;
+    text-decoration: none;
+    color: var(--accent-color-hover);
 }
 
 a:focus, a:active {
@@ -315,7 +318,7 @@ h1, h2, h3, h4, h5, h6 {
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     border-radius: 0;
-    background: #CA82F8;
+    background: var(--accent-color);
     color: #fff;
     border: none;
     padding: 16px;
@@ -558,7 +561,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
     left: 0;
     right: 0;
     font-size: 250px;
-    color: #f0f0f0;
+    color: rgba(222, 213, 207, 0.7);
     font-weight: 700;
 }
 
@@ -973,8 +976,9 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 
 .work-img .tags span {
     display: block; /* Ensures each icon is on a separate row */
-    background: #f8f9fa;
-    color: #CA82F8;
+    background: radial-gradient( circle at 50% 50%, rgba(255, 253, 249, 0.8) 0%, rgba(248, 219, 217, 0.8) 100%);
+
+    color: var(--accent-color-hover);
     padding: 5px 10px;
     margin-bottom: 5px;
     border-radius: 15px;
@@ -1013,9 +1017,9 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 
 .work-entry .work-img .display-t .work-name {
     display: inline-block;
-    border-radius: 5px;
-    padding: 2em 1em;
-    background: #fff;
+    border-radius: 10px;
+    padding: 1.5em 1em;
+    background: linear-gradient(105deg, rgba(236, 235, 235, 0.92), rgba(236, 210, 191, 0.75));
     -webkit-box-shadow: 0px 2px 49px -4px rgba(0, 0, 0, 0.21);
     -moz-box-shadow: 0px 2px 49px -4px rgba(0, 0, 0, 0.21);
     -ms-box-shadow: 0px 2px 49px -4px rgba(0, 0, 0, 0.21);
@@ -1336,14 +1340,14 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 }
 
 .btn-primary {
-    background: #CA82F8;
+    background: var(--accent-color);
     color: #fff;
-    border: 2px solid #CA82F8;
+    border: 2px solid var(--accent-color);
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    background: #d49af9 !important;
-    border-color: #d49af9 !important;
+    background: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
 }
 
 .btn-primary.btn-outline {
@@ -1353,7 +1357,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 }
 
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-    background: #CA82F8;
+    background: var(--accent-color);
     color: #fff;
 }
 
@@ -1664,7 +1668,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 }
 
 .contact-info li a {
-    color: #CA82F8;
+    color: var(--accent-color);
 }
 
 .form-control {
@@ -1703,7 +1707,7 @@ input[type="text"] {
 
 .colorlib-social-icons i {
     font-size: 24px;
-    color: #CA82F8;
+    color: #cc8f81;
 }
 
 #footer {
@@ -1729,7 +1733,7 @@ input[type="text"] {
 
 #footer p.colorlib-social-icons i {
     font-size: 24px;
-    color: #CA82F8;
+    color: var(--accent-color);
 }
 
 #footer p .block {
@@ -1791,6 +1795,10 @@ input[type="text"] {
     color: inherit;
 }
 
+.colorlib-social-icons a:hover i {
+    color: inherit;
+}
+
 .tags-container {
     margin: 20px 0;
     text-align: center;
@@ -1799,7 +1807,7 @@ input[type="text"] {
 .tag {
     display: inline-block;
     background: #f8f9fa;
-    color: #CA82F8;
+    color: var(--accent-color);
     padding: 5px 15px;
     margin: 5px;
     border-radius: 20px;
@@ -1814,19 +1822,20 @@ input[type="text"] {
 
 .click-button {
     display: inline-block;
-    background: #e9ecef;
-    color: #CA82F8;
+    background: linear-gradient(135deg, #f1f0f0, #f1e0d1);
+    color: var(--accent-color);
     padding: 5px 15px;
     margin: 5px;
     border-radius: 10px;
     font-size: 16px;
-    transition: background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .click-button:hover {
-    background: #d1d7de;
+    background: linear-gradient(135deg, #e5caca, #ecebe9);
     cursor: pointer;
-    color: #b94efc;
+    color: var(--accent-color-hover);
 }
 
 .social-cv-container {
@@ -1848,19 +1857,17 @@ input[type="text"] {
 .left-table {
     display: flex;
     flex-direction: column;
-
     position: fixed;
     top: 0;
     left: 0;
     width: 13%; /* Adjust width as needed */
     height: 100%;
-    background-color: #e0e0e0; /* Background color for the table */
     z-index: 1000; /* Ensure it stays on top */
 }
 .table-content span {
     display: block;
     /*color: #9b9b9b;*/
-    color: #c593ea;
+    color: #c08577;
     line-height: 2.2; /* Adjust to tighten vertical spacing */
     margin: 0; /* Optional: reset any default margins */
     text-align: center;
@@ -1871,7 +1878,7 @@ input[type="text"] {
 }
 
 .table-content span:hover {
-    color: #b04bf5;
+    color: var(--accent-color-hover);
     cursor: pointer;
 }
 
@@ -1915,7 +1922,7 @@ html {
 
 /* For the skill box */
  .skill-box {
-     background-color: rgba(248, 249, 250, 0.55);
+     background: linear-gradient(185deg, #e3dede, rgb(241, 239, 239));
      padding: 20px;
      border-radius: 12px;
      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -1948,11 +1955,11 @@ html {
 }
 
 .beginner-dot {
-    background-color: #E0C4FB;
+    background-color: var(--accent-color);
 }
 
 .intermediate-dot {
-    background-color: #CA82F8;
+    background-color: var(--accent-color-hover);
 }
 
 .skill {
@@ -1970,15 +1977,63 @@ html {
     height: 10px;
     border-radius: 5px;
     overflow: hidden;
-    background-color: #e9ecef;
+    background-color: #d3c8bc;
 }
 
 .skill-bar .beginner {
-    background-color: #E0C4FB;
+    background-color: var(--accent-color);
     width: 50%; /* Adjust width as needed */
 }
 
 .skill-bar .intermediate {
-    background-color: #CA82F8;
+    background-color: var(--accent-color-hover);
     width: 50%; /* Adjust width as needed */
+}
+
+.background-image {
+    position: absolute;
+    inset: 0; /* shorthand for top: 0; left: 0; right: 0; bottom: 0 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    /* Optional: Add dark overlay effect */
+    opacity: 0.3;
+    filter: brightness(0.8);
+}
+
+/* All other children sit above the background image */
+.left-table > *:not(.background-image) {
+    position: relative;
+    z-index: 1;
+}
+
+#footer .colorlib-social-icons a:hover i {
+    color: var(--accent-color-hover);
+}
+#footer p.colorlib-social-icons i {
+    color: #ca8e80; /* Set your desired default color */
+}
+
+#footer p.colorlib-social-icons a:hover i {
+    color: inherit; /* Keep the hover color inherited */
+}
+
+.text-with-other-color {
+    color: #ca8e80; /* Set your desired default color */
+    transition: color 0.3s ease;
+}
+
+.text-with-other-color:hover {
+    color: var(--accent-color-hover); /* Keep the hover color inherited */
+}
+
+.unselectable {
+    user-select: none;
+    pointer-events: none;
+}
+
+.hover-underline:hover {
+    text-decoration: underline;
 }
