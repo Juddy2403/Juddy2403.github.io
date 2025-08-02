@@ -1875,3 +1875,108 @@ input[type="text"] {
 html {
     scroll-behavior: smooth;
 }
+
+.custom-list {
+    list-style: none;
+    padding: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 20px;
+}
+
+.custom-list li {
+    margin: 5px 0;
+    text-align: center;
+    position: relative;
+}
+
+.custom-list .full-circle::before {
+    content: "\25CF"; /* Unicode for a full circle */
+    position: relative;
+    left: 0;
+    color: black;
+}
+
+.custom-list .empty-circle::before {
+    content: "\25CB"; /* Unicode for an empty circle */
+    position: relative;
+    left: 0;
+    color: black;
+}
+.rounded-box {
+    background-color: #f8f9fa; /* light gray like Bootstrap's bg-light */
+    padding: 36px;
+    opacity: 0.7; /* Slightly transparent */
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* For the skill box */
+ .skill-box {
+     background-color: rgba(248, 249, 250, 0.55);
+     padding: 20px;
+     border-radius: 12px;
+     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+     max-width: 500px;
+     margin-top: 20px;
+ }
+
+.legend {
+    display: block;
+    justify-content: space-between;
+}
+
+.legend span {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 26px;
+    color: #333333;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.legend .beginner-dot,
+.legend .intermediate-dot {
+    width: 40px;
+    height: 10px;
+    border-radius: 6px;
+    margin-top: 40px;
+    display: inline-block;
+    text-align: center;
+}
+
+.beginner-dot {
+    background-color: #E0C4FB;
+}
+
+.intermediate-dot {
+    background-color: #CA82F8;
+}
+
+.skill {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.skill-name {
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.skill-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #e9ecef;
+}
+
+.skill-bar .beginner {
+    background-color: #E0C4FB;
+    width: 50%; /* Adjust width as needed */
+}
+
+.skill-bar .intermediate {
+    background-color: #CA82F8;
+    width: 50%; /* Adjust width as needed */
+}
+
