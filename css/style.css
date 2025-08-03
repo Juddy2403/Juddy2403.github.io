@@ -21,7 +21,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     background: #fafafa;
-    color: gray;
+    color: #625d5d;
 }
 
 body.menu-show {
@@ -416,7 +416,7 @@ header .colorlib-navbar-brand {
 header .colorlib-navbar-brand .colorlib-logo {
     font-size: 20px;
     text-transform: uppercase;
-    color: #000;
+    color: #2c1108;
     font-weight: 400;
     letter-spacing: 5px;
     padding: 7px;
@@ -513,7 +513,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 .about-desc h2 span {
     display: block;
     margin-bottom: 0;
-    color: #000;
+    color: #6b5754;
     font-size: 50px;
     font-family: "Playfair Display", Georgia, serif;
 }
@@ -580,7 +580,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: 1.5em;
-    color: #000;
+    color: #644040;
     position: relative;
 }
 
@@ -965,12 +965,14 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
     position: absolute;
     top: 15px;
     right: 15px;
-    transition: opacity 0.3s, visibility 0.3s;
+    transform: translateX(100%);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
     text-align: right;
 }
 
 .work-img:hover .tags {
     opacity: 1;
+    transform: translateX(0);
     visibility: visible;
 }
 
@@ -978,11 +980,12 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
     display: block; /* Ensures each icon is on a separate row */
     background: radial-gradient( circle at 50% 50%, rgba(255, 253, 249, 0.8) 0%, rgba(248, 219, 217, 0.8) 100%);
 
-    color: var(--accent-color-hover);
+    color: #c2654c;
     padding: 5px 10px;
     margin-bottom: 5px;
     border-radius: 15px;
     font-size: 16px;
+    font-weight: 501;
     width: fit-content;
     margin-left: auto; /* Push each span to the right */
 }
@@ -1059,7 +1062,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 }
 
 .work-entry .desc .read a {
-    color: #000;
+    color: #261810;
     text-transform: uppercase;
     letter-spacing: 4px;
     font-size: 12px;
@@ -1820,22 +1823,22 @@ input[type="text"] {
     cursor: pointer;
 }
 
-.click-button {
+.click-button a {
     display: inline-block;
-    background: linear-gradient(135deg, #f1f0f0, #f1e0d1);
-    color: var(--accent-color);
+    background: linear-gradient(135deg, #f3f3f3, #f1e6d6);
+    color: #ab553e;
     padding: 5px 15px;
     margin: 5px;
     border-radius: 10px;
     font-size: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.click-button:hover {
+.click-button a:hover {
     background: linear-gradient(135deg, #e5caca, #ecebe9);
     cursor: pointer;
-    color: var(--accent-color-hover);
+    color: #d06e25;
 }
 
 .social-cv-container {
@@ -1849,7 +1852,23 @@ input[type="text"] {
     gap: 10px;
     margin: 0;
 }
+/* Default color for icons */
+.colorlib-social-icons i {
+    color: #cca295; /* Set your desired default color */
+}
 
+.colorlib-social-icons a:hover i {
+    color: #a25d53; /* Set your desired default color */
+}
+
+
+#footer p.colorlib-social-icons i {
+    color: #8c1212 !important; /* Default color */
+}
+
+#footer p.colorlib-social-icons a:hover i {
+    color: #c0522a !important; /* Hover color */
+}
 .cv-button {
     margin-left: 200px;
 }
@@ -1858,7 +1877,7 @@ input[type="text"] {
     display: flex;
     flex-direction: column;
     position: fixed;
-    box-shadow: 10px 0 20px -10px rgba(0, 0, 0, 0.35);
+    box-shadow: 20px 0 20px -10px rgba(0, 0, 0, 0.25);
     top: 0;
     left: 0;
     width: 13%;
@@ -1888,7 +1907,7 @@ input[type="text"] {
 .table-content span {
     display: block;
     /*color: #9b9b9b;*/
-    color: #c08577;
+    color: #be5934;
     line-height: 2.2; /* Adjust to tighten vertical spacing */
     margin: 0; /* Optional: reset any default margins */
     text-align: center;
@@ -1899,7 +1918,7 @@ input[type="text"] {
 }
 
 .table-content span:hover {
-    color: var(--accent-color-hover);
+    color: #9b3205;
     cursor: pointer;
 }
 
@@ -1998,7 +2017,7 @@ html {
     height: 10px;
     border-radius: 5px;
     overflow: hidden;
-    background-color: #d3c8bc;
+    background-color: rgba(211, 200, 188, 0.5);
 }
 
 .skill-bar .beginner {
@@ -2042,12 +2061,12 @@ html {
 }
 
 .text-with-other-color {
-    color: #ca8e80; /* Set your desired default color */
+    color: #850505; /* Set your desired default color */
     transition: color 0.3s ease;
 }
 
 .text-with-other-color:hover {
-    color: var(--accent-color-hover); /* Keep the hover color inherited */
+    color: #c0522a; /* Keep the hover color inherited */
 }
 
 .unselectable {
@@ -2057,4 +2076,13 @@ html {
 
 .hover-underline:hover {
     text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 a{
+    color: #644040; /* New header color */
+    font-family: "Playfair Display", Georgia, serif;
+    margin: 0 0 30px 0;
+}
+#footer h2{
+    color: #644040; /* New header color */
 }
