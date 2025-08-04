@@ -1036,6 +1036,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 
 .work-entry .work-img .display-t .work-name h2 {
     margin: 0;
+    color: #382b2b;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
@@ -1803,28 +1804,32 @@ input[type="text"] {
 }
 
 .tags-container {
-    margin: 20px 0;
+    padding: 4% 10%;
     text-align: center;
 }
 
-.tag {
+.tags-container span {
+    background: rgba(255, 250, 248, 0.71);
+    color: #AE4D32;
+    width: fit-content;
+    margin: 0 10px 10px 0;
     display: inline-block;
-    background: #f8f9fa;
-    color: var(--accent-color);
     padding: 5px 15px;
-    margin: 5px;
-    border-radius: 20px;
+    border-radius: 12px;
     font-size: 16px;
     transition: background 0.3s ease;
 }
 
-.tag:hover {
-    background: #e9ecef;
+.tags-container span:hover {
+    background: rgba(236, 231, 228, 0.89);
+    color: #943811;
     cursor: pointer;
 }
 
 .click-button a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: linear-gradient(135deg, #f3f3f3, #f1e6d6);
     color: #ab553e;
     padding: 5px 15px;
@@ -2085,4 +2090,17 @@ h1, h2, h3, h4, h5, h6 a{
 }
 #footer h2{
     color: #644040; /* New header color */
+}
+.go-back-arrow {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    font-size: 35px;
+    color: #ce663f;
+    z-index: 10;
+    transition: color 0.3s;
+}
+.go-back-arrow:hover {
+    color: #ad3c0b;
+    cursor: pointer;
 }

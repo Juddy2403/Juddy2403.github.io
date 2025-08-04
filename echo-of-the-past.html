@@ -50,47 +50,54 @@
     <![endif]-->
 
 </head>
-<body>
 
-<nav id="colorlib-main-nav" role="navigation"><a href="#"
-                                                 class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
-    <div class="js-fullheight colorlib-table">
-        <div class="colorlib-table-cell js-fullheight">
-            <div class="row">
-                <!--                <div class="col-md-12">-->
-                <!--                    <div class="form-group">-->
-                <!--                        <input type="text" class="form-control" id="search" placeholder="Enter any key to search...">-->
-                <!--                        <button type="submit" class="btn btn-primary"><i class="icon-search3"></i></button>-->
-                <!--                    </div>-->
-                <!--                </div>-->
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li class="active"><a href="work.html">Work</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </div>
-            </div>
+<style>
+    body {
+        background-image: url('images/background.jpg'); /* Adjust path as needed */
+        background-size: cover; /* Makes the image cover the whole page */
+        background-repeat: no-repeat; /* Prevents tiling */
+        background-position: center; /* Centers the image */
+        background-attachment: fixed; /* Optional: keeps it fixed on scroll */
+    }
+</style>
+
+<body>
+<div class="sidebar-hover">
+    <div class="left-table" style="background-image: url(images/border.jpg); background-size: cover;">
+        <a href="index.html" class="go-back-arrow" aria-label="Go back">
+            <i class="icon-arrow-left-outline"></i>
+        </a>
+        <div style="text-align: center;">
+            <a href="#">
+                <img src="images/logo.png" alt="Logo"
+                     style="width: 80px; height: 80px; margin-top:10px; object-fit: cover;">
+            </a>
+        </div>
+        <div style="height: 20px;"></div>
+        <div class="table-content">
+            <a href="#about"> <span>About</span></a>
+            <a href="#whatidid"> <span>What I did</span></a>
+            <a href="#gameplay"> <span>Gameplay</span></a>
+            <a href="#story"> <span>Story</span></a>
+            <a href="#contact"> <span>Contact</span></a>
+        </div>
+        <div class="center-block" style="margin-top: auto; margin-bottom: 40px;">
+            <p class="colorlib-social-icons">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/Juddy2403">
+                    <i class="icon-github"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer"
+                   href="https://www.linkedin.com/in/ioana-raileanu-147725252/">
+                    <i class="icon-linkedin2"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://discord.com/users/519186019564912680">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+            </p>
         </div>
     </div>
-</nav>
-
+</div>
 <div id="colorlib-page">
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="colorlib-navbar-brand">
-                        <a class="colorlib-logo" href="index.html"><span>Game</span><span>Dev</span></a>
-                    </div>
-                    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
     <div id="colorlib-work">
         <div class="container">
             <div class="row text-center">
@@ -115,80 +122,91 @@
                     <div class="work-entry animate-box">
                         <p class="work-img" style="background-image: url(images/EchoOfThePast.png);">
                         </p>
-                        <a href="https://github.com/Juddy2403/EchoOfThePast"
-                           target="_blank" rel="noopener noreferrer"
-                           style="margin-left: 75%;">
-                            <p class="click-button">
-                                <i class="icon-github" style="font-size: 28px; margin-top: 20%;">
+                        <div class="click-button" style="margin-left: 5%;">
+                            <a href="https://github.com/Juddy2403/EchoOfThePast"
+                               target="_blank" rel="noopener noreferrer">
+                                <i class="icon-github" style="font-size: 28px;">
                                 </i>
                                 <i style="font-size: 22px;">
                                     Check it on github!
                                 </i>
-                            </p>
-                        </a>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-2">
-                                    <div class="tags-container" style="margin: 20px 0;">
-                                        <span class="tag">Unreal Engine 5</span>
-                                        <span class="tag">Blueprints & C++</span>
-                                        <span class="tag">AI Behavior</span>
-                                        <span class="tag">Dialogue System</span>
-                                        <span class="tag">Combat Design</span>
-                                        <span class="tag">Animation Systems</span>
-                                        <span class="tag">Rapid Prototyping</span>
-                                        <span class="tag">Indie Development</span>
-                                        <span class="tag">Niagara System</span>
-                                        <span class="tag">UI Design</span>
-                                        <span class="tag">Story Writing</span>
-                                        <!-- Add more tags as needed -->
-                                    </div>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="col-md-8 col-md-offset-2">
+                        <div class="tags-container">
+                            <span>Unreal Engine 5</span>
+                            <span>Blueprints & C++</span>
+                            <span>AI Behavior</span>
+                            <span>Dialogue System</span>
+                            <span>Combat Design</span>
+                            <span>Animation Systems</span>
+                            <span>Rapid Prototyping</span>
+                            <span>Indie Development</span>
+                            <span>Niagara System</span>
+                            <span>UI Design</span>
+                            <span>Story Writing</span>
+                            <!-- Add more tags as needed -->
+                        </div>
+                        <section id="about"></section>
+
+                        <div class="col-md-10 col-md-offset-1">
                             <div class="desc">
                                 <h2>About</h2>
                                 <p>The keywords I received for this project meant to direct my design choice were
-                                "future" and "resource management". Starting from there, I created a game that focuses on combat.
-                                However, to better integrate the theme assigned to me, I had to add a twist to it. I decided
-                                to go in the RPG direction, making this game's genre <strong>combat RPG</strong>.</p>
-                                <h2>Demo</h2>
-                                <iframe width="700" height="400"
-                                        src="https://www.youtube.com/embed/XyhQmIYOIvY?si=YXBdFYxmo1PN4HQy"
-                                        title="YouTube video player" frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                <br>
-                                <h2>What I did</h2>
-                                <h2>Gameplay</h2>
-                                <h2>Story</h2>
-                                <p>The game's storyline follows the adventure of the last remaining consciousness on planet
-                                Earth: four androids, on a barren lifeless land, slowly decaying. You have to do something
-                                about the world's current state before you perish.</p>
-                                <p>The elder android brings a solution: using the last remaining resources he could find,
-                                    he manages to build a portal to the past. But it has limitations. Only one person can
-                                    go in at a time, and its unstability makes it uncertain about how many times it can
-                                     successfully be used.</p>
-                                <p>The humans from the far past are the ones that destroyed all life on earth. They evolved
-                                too fast, made too many stupid choices. The game for power brought their end. </p>
-                                <h3>Your mission</h3>
-                                <p>You are the last combat-type android remaining in your group. You must go back to the
-                                past at key moments in humanity's history and slow their evolution down as much as possible.</p>
-                                <h3>In-Game Limitations</h3>
-                                <p>You can't take any resources with you to the past to aid in your mission, nor can you
-                                bring resources from the past to the present. You must do with what you can find in the
-                                past, survive, and fulfill your mission.</p>
-                                <h3>Story Progress</h3>
-                                <p>As you fulfill your missions, your present keeps changing. The sky gets clearer, water
-                                sources start showing. But you only get weaker... frailer. After all, you are humanity's
-                                <strong>greatest creation.</strong></p>
-
-                                <p class="read"><a
+                                    "future" and "resource management". Starting from there, I created a game that
+                                    focuses on combat.
+                                    However, to better integrate the theme assigned to me, I had to add a twist to it. I
+                                    decided
+                                    to go in the RPG direction, making this game's genre <strong>combat RPG</strong>.
+                                </p>
+                                <p class="read hover-underline"><a
                                         href="https://github.com/Juddy2403/EchoOfThePast/releases/download/V3.2/Build.rar"
                                         target="_blank" rel="noopener noreferrer">
                                     <strong>Download</strong>
                                 </a></p>
+                                <h2>Trailer</h2>
+                                <iframe width="100%" height="515"
+                                        src="https://www.youtube.com/embed/fJo50iQTukI?si=KeM4X5PN_u_8E93x"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <div style="margin-top: 20px"></div>
+                                <section id="whatidid"></section>
+                                <h2>What I did</h2>
+                                <section id="gameplay"></section>
+                                <h2>Gameplay</h2>
+                                <section id="story"></section>
+                                <h2>Story</h2>
+                                <p>The game's storyline follows the adventure of the last remaining consciousness on
+                                    planet
+                                    Earth: four androids, on a barren lifeless land, slowly decaying. You have to do
+                                    something
+                                    about the world's current state before you perish.</p>
+                                <p>The elder android brings a solution: using the last remaining resources he could
+                                    find,
+                                    he manages to build a portal to the past. But it has limitations. Only one person
+                                    can
+                                    go in at a time, and its unstability makes it uncertain about how many times it can
+                                    successfully be used.</p>
+                                <p>The humans from the far past are the ones that destroyed all life on earth. They
+                                    evolved
+                                    too fast, made too many stupid choices. The game for power brought their end. </p>
+                                <h3>Your mission</h3>
+                                <p>You are the last combat-type android remaining in your group. You must go back to the
+                                    past at key moments in humanity's history and slow their evolution down as much as
+                                    possible.</p>
+                                <h3>In-Game Limitations</h3>
+                                <p>You can't take any resources with you to the past to aid in your mission, nor can you
+                                    bring resources from the past to the present. You must do with what you can find in
+                                    the
+                                    past, survive, and fulfill your mission.</p>
+                                <h3>Story Progress</h3>
+                                <p>As you fulfill your missions, your present keeps changing. The sky gets clearer,
+                                    water
+                                    sources start showing. But you only get weaker... frailer. After all, you are
+                                    humanity's
+                                    <strong>greatest creation.</strong></p>
+
+
                             </div>
                         </div>
                     </div>
@@ -196,7 +214,7 @@
             </div>
         </div>
     </div>
-
+    <section id="contact"></section>
     <footer>
         <div id="footer">
             <div class="container">
@@ -207,7 +225,8 @@
                             <p>Whether it’s about a project, opportunity, or just a shared passion for game development
                                 — I’d love
                                 to hear from you.</p>
-                            <p><a href="#">ioanaraileanu@yahoo.com</a></p>
+                            <p><a href="mailto:ioanaraileanu@yahoo.com" class="text-with-other-color">ioanaraileanu@yahoo.com</a>
+                            </p>
                             <p class="colorlib-social-icons">
                                 <a href="https://github.com/Juddy2403"
                                    target="_blank" rel="noopener noreferrer"><i
@@ -233,7 +252,7 @@
                             <script>document.write(new Date().getFullYear());</script>
                             All rights reserved | This template is made with <i class="icon-heart4"
                                                                                 aria-hidden="true"></i>
-                            by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            by <a class="text-with-other-color" href="https://colorlib.com" target="_blank">Colorlib</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
