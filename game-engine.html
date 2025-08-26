@@ -76,7 +76,7 @@
         <div style="height: 20px;"></div>
         <div class="table-content">
             <a href="#about"> <span>About</span></a>
-            <a href="#whatidid"> <span>What I did</span></a>
+            <a href="#details"> <span>Details</span></a>
             <a href="#contact"> <span>Contact</span></a>
         </div>
         <div class="center-block" style="margin-top: auto; margin-bottom: 40px;">
@@ -120,7 +120,7 @@
                 <div class="col-md-12">
                     <div class="work-entry animate-box">
                         <p class="work-img"
-                           style="background-image: url(images/GameEngine.png); background-size: cover;);">
+                           style="background-image: url(https://bitvint.com/cdn/shop/files/Galaga_Arcade_Gameplay_Levels.jpg?v=1735986679&width=3172); background-size: cover;);">
                         </p>
                         <div class="click-button" style="margin-left: 5%;">
                             <a href="https://github.com/Juddy2403/2D_GameEngine"
@@ -152,13 +152,16 @@
                                 <h2>About</h2>
                                 <p>
                                     This project was developed as part of an advanced programming course at university.
-                                    The goal was to create a 2D game engine from scratch using C++, its standard library and SDL
-                                    while following the best practices in software engineering and game design patterns, over the
+                                    The goal was to create a 2D game engine from scratch using C++, its standard library
+                                    and SDL
+                                    while following the best practices in software engineering and game design patterns,
+                                    over the
                                     course of one semester.
                                 </p>
                                 <p>
                                     It was an individual project, and to prove that the engine is fully functional,
-                                    we also had to create an arcade game with it. I had to create <a href="https://en.wikipedia.org/wiki/Galaga">
+                                    we also had to create an arcade game with it. I had to create <a
+                                        href="https://en.wikipedia.org/wiki/Galaga">
                                     Galaga
                                 </a> , a classic
                                     arcade shooter game.
@@ -169,13 +172,67 @@
                                         target="_blank" rel="noopener noreferrer">
                                     <strong>Download</strong>
                                 </a></p>
-                                <p style="text-align: center;">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/2/2a/Galaga.png"
-                                         alt="Description"
-                                         style="width:60%; margin-top:10px; border-radius: 10px;">
-                                </p>
+                                <section id="details"></section>
+                                <h2 class="text-center" style="padding-top: 30px;">Technical Details</h2>
+
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="animate-box row">
+                <div class="col-md-3 center-block">
+                    <div class="skill-box">
+                        <h3>Design Patterns</h3>
+                        <ul>
+                            <li>Singleton</li>
+                            <li>State</li>
+                            <li>Game Loop</li>
+                            <li>Command</li>
+                            <li>Observer</li>
+                            <li>Component</li>
+                            <li>Event Queue</li>
+                            <li>Dirty Flag</li>
+                            <li>Object Pool</li>
+                            <li>Service Locator</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 center-block">
+                    <div class="skill-box">
+                        <h3>Optimization Techniques</h3>
+                        <ul>
+                            <li>Threading</li>
+                            <li>Decoupling</li>
+                        </ul>
+                    </div>
+                    <div class="skill-box">
+                        <h3>Libraries Used</h3>
+                        <ul>
+                            <li>SDL</li>
+                            <li>Json nhlommans</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 center-block">
+                    <div class="skill-box">
+                        <h3>Systems Specifics</h3>
+                        <ul>
+                            <li>
+                                Input System
+                                <ul>
+                                    <li>Made using the command pattern</li>
+                                    <li>Hides controller implementation via the Pimpl idiom</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Sound System
+                                <ul>
+                                    <li>Made using the event queue pattern and service locator pattern</li>
+                                    <li>Uses threading</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
