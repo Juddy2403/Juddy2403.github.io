@@ -21,7 +21,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     background: #fafafa;
-    color: #625d5d;
+    color: #3b3736;
 }
 
 body.menu-show {
@@ -513,7 +513,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 .about-desc h2 span {
     display: block;
     margin-bottom: 0;
-    color: #6b5754;
+    color: #5d4b49;
     font-size: 50px;
     font-family: "Playfair Display", Georgia, serif;
 }
