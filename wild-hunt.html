@@ -92,6 +92,10 @@
                 <a target="_blank" rel="noopener noreferrer" href="https://discord.com/users/519186019564912680">
                     <i class="fa-brands fa-discord"></i>
                 </a>
+                <a target="_blank" rel="noopener noreferrer"
+                   href="https://juddy24.itch.io/">
+                    <i class="fa-brands fa-itch-io"></i>
+                </a>
             </p>
         </div>
     </div>
@@ -237,55 +241,16 @@
                 </div>
             </div>
         </div>
-
+        <section id="contact"></section>
+        <div id="footer-placeholder"></div>
         <footer>
-            <div id="footer">
-                <div class="container">
-                    <div class="row">
-                        <section id="contact"></section>
-                        <div class="col-md-4 col-pb-sm col-lg-12">
-                            <div class="col-md-10 col-lg-12">
-                                <h2>Let's Talk</h2>
-                                <p>Whether it’s about a project, opportunity, or just a shared passion for game
-                                    development
-                                    — I’d love
-                                    to hear from you.</p>
-                                <p style="font-size: 1.2em; font-weight: 501; font-family: 'Playfair Display', Georgia, serif;">
-                                    <a href="mailto:ioanaraileanu24@yahoo.com" class="text-with-other-color">ioanaraileanu24@yahoo.com</a>
-                                </p>
-                                <p class="colorlib-social-icons">
-                                    <a href="https://github.com/Juddy2403"
-                                       target="_blank" rel="noopener noreferrer"><i
-                                            class="icon-github"></i>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/ioana-raileanu-147725252/"
-                                       target="_blank" rel="noopener noreferrer"><i
-                                            class="icon-linkedin2"></i>
-                                    </a>
-                                    <a href="https://discord.com/users/519186019564912680"
-                                       target="_blank" rel="noopener noreferrer">
-                                        <i class="fa-brands fa-discord"></i>
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <p> &copy;
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script>
-                                All rights reserved | This template is made with <i class="icon-heart4"
-                                                                                    aria-hidden="true"></i>
-                                by <a href="https://colorlib.com" class="text-with-other-color"
-                                      target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <script>
+                fetch('footer.html')
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('footer-placeholder').innerHTML = html;
+                    });
+            </script>
         </footer>
 
     </div>

@@ -1711,9 +1711,30 @@ input[type="text"] {
 }
 
 #footer {
-    padding: 8em 0;
+    position: relative;
+    padding: 3em 0;
     display: block;
     width: 100%;
+}
+
+/* Full-width transparent black background behind the centered content */
+#footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* centers the 100vw bar relative to viewport */ /* [7] */
+    width: 100vw; /* span full viewport width */ /* [7] */
+    height: 100%; /* match footer height */ /* [7] */
+    background: linear-gradient(155deg, rgba(17, 8, 35, 0.7), rgba(59, 56, 56, 0.69));
+    pointer-events: none; /* keep links clickable */ /* [7] */
+    z-index: 0; /* sits behind content */ /* [9] */
+}
+
+/* Ensure inner content stays above the background */
+#footer > .container {
+    position: relative;
+    z-index: 1; /* above ::before layer */ /* [9] */
 }
 
 #footer h2 {
@@ -1924,6 +1945,7 @@ input[type="text"] {
 }
 
 html {
+    overflow-x: hidden; /* prevents horizontal scroll from 100vw background */ /* [7] */
     scroll-behavior: smooth;
 }
 
