@@ -1861,6 +1861,9 @@ input[type="text"] {
     color: #aa77d7;
 
 }
+#cursor-light {
+    transition: background 0.1s;
+}
 .colorlib-social-icons a:hover i {
     color: inherit;
 }
