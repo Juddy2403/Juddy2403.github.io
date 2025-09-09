@@ -62,43 +62,25 @@
 </style>
 
 <body>
-<div class="sidebar-hover">
-    <div class="left-table" style="background-image: url(images/border3.jpg); background-size: cover;">
-        <a href="index.html" class="go-back-arrow" aria-label="Go back">
-            <i class="icon-arrow-left-outline"></i>
-        </a>
-        <div style="text-align: center;">
-            <a href="#">
-                <img src="images/logo.png" alt="Logo"
-                     style="width: 80px; height: 80px; margin-top:10px; object-fit: cover;">
-            </a>
-        </div>
-        <div style="height: 20px;"></div>
-        <div class="table-content">
-            <a href="#about"> <span>About</span></a>
+<a href="index.html" class="go-back-arrow" aria-label="Go back">
+    <i class="icon-arrow-left-outline"></i>
+</a>
+<div id="sidebar-container"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('sidebar-container').innerHTML = html;
+                document.getElementById('sidebar-table-content').innerHTML = `
+                      <a href="#about"> <span>About</span></a>
             <a href="#details"> <span>Details</span></a>
             <a href="#contact"> <span>Contact</span></a>
-        </div>
-        <div class="center-block" style="margin-top: auto; margin-bottom: 40px;">
-            <p class="colorlib-social-icons">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/Juddy2403">
-                    <i class="icon-github"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer"
-                   href="https://www.linkedin.com/in/ioana-raileanu-147725252/">
-                    <i class="icon-linkedin2"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer" href="https://discord.com/users/519186019564912680">
-                    <i class="fa-brands fa-discord"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer"
-                   href="https://juddy24.itch.io/">
-                    <i class="fa-brands fa-itch-io"></i>
-                </a>
-            </p>
-        </div>
-    </div>
-</div>
+                    `;
+            });
+    });
+</script>
+
 <div id="colorlib-page">
 
     <div id="colorlib-work">
@@ -109,7 +91,7 @@
             <div class="row">
                 <div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
                     <span>Portfolio</span>
-                    <h2>2D Game Engine</h2>
+                    <h2 class="zoom-on-hover">2D Game Engine</h2>
                 </div>
             </div>
 
@@ -241,20 +223,21 @@
                 </div>
             </div>
         </div>
-        <section id="contact"></section>
-        <div id="footer-placeholder"></div>
-        <footer>
-            <script>
-                fetch('footer.html')
-                    .then(response => response.text())
-                    .then(html => {
-                        document.getElementById('footer-placeholder').innerHTML = html;
-                    });
-            </script>
-        </footer>
+
 
     </div>
-
+    <section id="contact"></section>
+    <div id="footer-placeholder"></div>
+    <footer>
+        <script>
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+                });
+        </script>
+    </footer>
+</div>
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
     <!-- jQuery Easing -->

@@ -63,44 +63,25 @@
 </style>
 
 <body>
-<div class="sidebar-hover">
-    <div class="left-table" style="background-image: url(images/border3.jpg); background-size: cover;">
-        <a href="index.html" class="go-back-arrow" aria-label="Go back">
-            <i class="icon-arrow-left-outline"></i>
-        </a>
-        <div style="text-align: center;">
-            <a href="#">
-                <img src="images/logo.png" alt="Logo"
-                     style="width: 80px; height: 80px; margin-top:10px; object-fit: cover;">
-            </a>
-        </div>
-        <div style="height: 20px;"></div>
-        <div class="table-content">
-            <a href="#about"> <span>About</span></a>
-            <a href="#whatidid"> <span>What I did</span></a>
-            <a href="#story"> <span>Story</span></a>
-            <a href="#contact"> <span>Contact</span></a>
-        </div>
-        <div class="center-block" style="margin-top: auto; margin-bottom: 40px;">
-            <p class="colorlib-social-icons">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/Juddy2403">
-                    <i class="icon-github"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer"
-                   href="https://www.linkedin.com/in/ioana-raileanu-147725252/">
-                    <i class="icon-linkedin2"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer" href="https://discord.com/users/519186019564912680">
-                    <i class="fa-brands fa-discord"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer"
-                   href="https://juddy24.itch.io/">
-                    <i class="fa-brands fa-itch-io"></i>
-                </a>
-            </p>
-        </div>
-    </div>
-</div>
+<a href="index.html" class="go-back-arrow" aria-label="Go back">
+    <i class="icon-arrow-left-outline"></i>
+</a>
+<div id="sidebar-container"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('sidebar-container').innerHTML = html;
+                document.getElementById('sidebar-table-content').innerHTML = `
+                        <a href="#about"><span>About</span></a>
+                        <a href="#whatidid"><span>What I did</span></a>
+                        <a href="#story"><span>Story</span></a>
+                        <a href="#contact"><span>Contact</span></a>
+                    `;
+            });
+    });
+</script>
 <div id="colorlib-page">
     <div id="colorlib-work">
         <div class="container">
@@ -110,7 +91,7 @@
             <div class="row">
                 <div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
                     <span>Portfolio</span>
-                    <h2>Echo of The Past</h2>
+                    <h2 class="zoom-on-hover">Echo of The Past</h2>
                 </div>
             </div>
 
@@ -156,14 +137,19 @@ background-size: cover; background-position: right;">
                         <div class="col-md-10 col-md-offset-1">
                             <div class="desc">
                                 <h2>About</h2>
-                                <p>The keywords I received for this project meant to direct my design choice were
-                                    "future" and "resource management". Starting from there, I created a game that
+                                <p>The keywords I received for this project meant to direct my design choice
+                                    were
+                                    "future" and "resource management". Starting from there, I created a game
+                                    that
                                     focuses on combat.
-                                    However, to better integrate the theme assigned to me, I had to add a twist to it. I
+                                    However, to better integrate the theme assigned to me, I had to add a twist
+                                    to it. I
                                     decided
-                                    to go in the RPG direction, making this game's genre <strong>combat RPG</strong>.
+                                    to go in the RPG direction, making this game's genre <strong>combat
+                                        RPG</strong>.
                                 </p>
-                                <p>Despite this project being part of an university course, I decided to keep working on
+                                <p>Despite this project being part of an university course, I decided to keep
+                                    working on
                                     it
                                     even after the deadline, making it a personal project instead.</p>
                                 <p class="read hover-underline"><a
@@ -172,155 +158,223 @@ background-size: cover; background-position: right;">
                                     <strong>Download</strong>
                                 </a></p>
                                 <h2>Trailer</h2>
-                                <iframe width="100%" height="515"
+                                <iframe width="100%" height="515" class="zoom-on-hover"
                                         src="https://www.youtube.com/embed/tQl6Na0fBCw?si=03Fi-f6cqMh9b_r7"
                                         title="YouTube video player" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen></iframe>
                                 <div style="margin-top: 20px"></div>
                                 <section id="whatidid"></section>
                                 <h2>What I did</h2>
                                 <p>
-                                    From the combat system to the animation implementation, I wrote all the logic needed
-                                    for the game. Other than that, I also designed the entire game, wrote the narrative,
+                                    From the combat system to the animation implementation, I wrote all the
+                                    logic needed
+                                    for the game. Other than that, I also designed the entire game, wrote the
+                                    narrative,
                                     and created the UI.
                                 </p>
                                 <h3> Perspective challenges</h3>
-                                <p> The combat changes become quite difficult to program when you take perspective into
-                                    account. My inspiration for this combat style was Crosscode, which is a 2D game. But
-                                    in 3D space, when you rotate the camera view around, your radius range changes
-                                    drastically if it's, for example, sitting on the ground. The cursor will never point
+                                <p> The combat changes become quite difficult to program when you take
+                                    perspective into
+                                    account. My inspiration for this combat style was Crosscode, which is a 2D
+                                    game. But
+                                    in 3D space, when you rotate the camera view around, your radius range
+                                    changes
+                                    drastically if it's, for example, sitting on the ground. The cursor will
+                                    never point
                                     where you want either, and ranged attacks will never hit.</p>
 
                                 <h4>So, how did I do it?</h4>
-                                <p> Using a custom trace channel that only hits one plane going through the player's
-                                    middle, I was able to set the cursor icon's location on that one plane (that is
+                                <p> Using a custom trace channel that only hits one plane going through the
+                                    player's
+                                    middle, I was able to set the cursor icon's location on that one plane (that
+                                    is
                                     invisible and has no other colliders). Therefore, I was able to increase the
                                     accuracy for aiming by a lot.</p>
                                 <p>
-                                    <img src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/351827/3840xAUTO/Screenshot%202025-06-20%20040019-Juddy2403.png"
-                                         alt="Description"
-                                         style="max-width:100%; margin-top:10px; border-radius: 10px;">
+                                    <img
+                                            src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/351827/3840xAUTO/Screenshot%202025-06-20%20040019-Juddy2403.png"
+                                            alt="Description" class="zoom-on-hover"
+                                            style="max-width:100%; margin-top:10px; border-radius: 10px;"/>
                                 </p>
-                                <p> However, one issue still remains. How would the player know whether he's using melee
+                                <p> However, one issue still remains. How would the player know whether he's
+                                    using melee
                                     or ranged before attacking?</p>
-                                <p> That's where the melee radius comes into plane. Just as the cursor plane, the melee
-                                    radius runs through the middle of the player. Using a custom material with a texture
-                                    and messing with the custom stencil settings I was able to replicate something that
-                                    looks more decent than it does hacky. Though that does mean I had to limit the main
+                                <p> That's where the melee radius comes into plane. Just as the cursor plane,
+                                    the melee
+                                    radius runs through the middle of the player. Using a custom material with a
+                                    texture
+                                    and messing with the custom stencil settings I was able to replicate
+                                    something that
+                                    looks more decent than it does hacky. Though that does mean I had to limit
+                                    the main
                                     camera's rotation range for it to keep looking good.</p>
                                 <p style="display: flex; gap: 10px; justify-content: center;">
-                                    <img src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/321650/3840xAUTO/Screenshot%202025-06-20%20034320-Juddy2403.png"
-                                         alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
-                                    <img src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/321650/3840xAUTO/Screenshot%202025-06-20%20034256-Juddy2403.png"
-                                         alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
+                                    <img
+                                            src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/321650/3840xAUTO/Screenshot%202025-06-20%20034320-Juddy2403.png"
+                                            class="zoom-on-hover" alt="Description"
+                                            style="max-width:60%; margin-top:10px; border-radius: 10px;"/>
+                                    <img
+                                            src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/321650/3840xAUTO/Screenshot%202025-06-20%20034256-Juddy2403.png"
+                                            class="zoom-on-hover" alt="Description"
+                                            style="max-width:60%; margin-top:10px; border-radius: 10px;"/>
                                 </p>
                                 <h3>Weapons</h3>
-                                <p>I offer a variety of different weapons within my game, all with different stats.
-                                    There are a total of <strong>8 guns</strong> and <strong>8 melee</strong> weapons,
+                                <p>I offer a variety of different weapons within my game, all with different
+                                    stats.
+                                    There are a total of <strong>8 guns</strong> and <strong>8
+                                        melee</strong> weapons,
                                     the guns sharing 3 different
                                     projectile types. </p>
                                 <p style="display: flex; gap: 10px; justify-content: center;">
-                                    <img src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/432298/3840xAUTO/Screenshot%202025-06-20%20041116-Juddy2403.png"
-                                         alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
-                                    <img src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/432298/3840xAUTO/Screenshot%202025-06-20%20041019-Juddy2403.png"
-                                         alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
+                                    <img
+                                            src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/432298/3840xAUTO/Screenshot%202025-06-20%20041116-Juddy2403.png"
+                                            class="zoom-on-hover" alt="Description"
+                                            style="max-width:60%; margin-top:10px; border-radius: 10px;"/>
+                                    <img
+                                            src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/432298/3840xAUTO/Screenshot%202025-06-20%20041019-Juddy2403.png"
+                                            class="zoom-on-hover" alt="Description"
+                                            style="max-width:60%; margin-top:10px; border-radius: 10px;"/>
                                 </p>
                                 <p>
-                                    Upon having picked up a new weapon, the old weapon is dropped and can be picked up
-                                    again. The stats of the weapons on the ground change when the player has a weapon of
+                                    Upon having picked up a new weapon, the old weapon is dropped and can be
+                                    picked up
+                                    again. The stats of the weapons on the ground change when the player has a
+                                    weapon of
                                     the
-                                    same type equipped, showing extra ques to whether the stats are better, worse, or
+                                    same type equipped, showing extra ques to whether the stats are better,
+                                    worse, or
                                     the
                                     same.
                                 </p>
                                 <p style="display: flex; gap: 10px; justify-content: center;">
-                                    <img src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/363425/3840xAUTO/Screenshot%202025-06-20%20041427-Juddy2403.png"
-                                         alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
-                                    <img src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/363425/3840xAUTO/Screenshot%202025-06-20%20041405-Juddy2403.png"
-                                         alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
+                                    <img
+                                            src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/363425/3840xAUTO/Screenshot%202025-06-20%20041427-Juddy2403.png"
+                                            class="zoom-on-hover" alt="Description"
+                                            style="max-width:60%; margin-top:10px; border-radius: 10px;"/>
+                                    <img
+                                            src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/363425/3840xAUTO/Screenshot%202025-06-20%20041405-Juddy2403.png"
+                                            class="zoom-on-hover" alt="Description"
+                                            style="max-width:60%; margin-top:10px; border-radius: 10px;"/>
                                 </p>
                                 <h3>Damage System</h3>
-                                <p>As observed, all weapons have a crit rate, speed/fire rate, attack. The fire rate is
-                                    how fast a gun can shoot repeatedly, while the speed for melee is how fast the sword
-                                    is swinged. The attack is the raw damage of the weapon, and the crit rate is the
+                                <p>As observed, all weapons have a crit rate, speed/fire rate, attack. The fire
+                                    rate is
+                                    how fast a gun can shoot repeatedly, while the speed for melee is how fast
+                                    the sword
+                                    is swinged. The attack is the raw damage of the weapon, and the crit rate is
+                                    the
                                     chance to score more damage. There's also a random chance of missing. </p>
                                 <h4>Stagger mechanic</h4>
                                 <p>
-                                    The enemies are also of two types: melee and ranged. The melee enemies have a
-                                    weakness: just before attacking, they become staggarable, leaving them an easy
-                                    target for the one wielding a fast sword. Upon being staggered, they stop their
-                                    attack and become immobile for a short amount of time. A VFX plays as an indicator
+                                    The enemies are also of two types: melee and ranged. The melee enemies have
+                                    a
+                                    weakness: just before attacking, they become staggarable, leaving them an
+                                    easy
+                                    target for the one wielding a fast sword. Upon being staggered, they stop
+                                    their
+                                    attack and become immobile for a short amount of time. A VFX plays as an
+                                    indicator
                                     when an enemy can be staggered.
                                 </p>
                                 <h4>Floating Point VFX</h4>
-                                <p>The damage done, as well as misses or staggers can be seen as a floating point value.
-                                    The functionality of this is contained in a blueprint component, and it makes use of
+                                <p>The damage done, as well as misses or staggers can be seen as a floating
+                                    point value.
+                                    The functionality of this is contained in a blueprint component, and it
+                                    makes use of
                                     the niagara system to make the throw fully random. </p>
                                 <h4>Combo System</h4>
-                                <p>A different attack animation is used based on the current combo type, with the last
+                                <p>A different attack animation is used based on the current combo type, with
+                                    the last
                                     attack of the combo always being a crit.</p>
                                 <h3>Enemy AI</h3>
-                                <p>The enemy follows a relatively simple Behavior Tree, with small changes between the
-                                    melee and ranged enemy. There is one enemy character Blueprint with a customizable
+                                <p>The enemy follows a relatively simple Behavior Tree, with small changes
+                                    between the
+                                    melee and ranged enemy. There is one enemy character Blueprint with a
+                                    customizable
                                     Behavior Tree.</p>
                                 <p>
-                                    <img src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/164555/3840xAUTO/Screenshot%202025-06-20%20044658-Juddy2403.png"
-                                         alt="Description"
-                                         style="max-width:100%; margin-top:10px; border-radius: 10px;">
+                                    <img
+                                            src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-20/164555/3840xAUTO/Screenshot%202025-06-20%20044658-Juddy2403.png"
+                                            alt="Description" class="zoom-on-hover"
+                                            style="max-width:100%; margin-top:10px; border-radius: 10px;"/>
                                 </p>
-                                <p>Making use of Unreal Engine's Pawn Sensing, the enemy can see and hear (footsteps,
-                                    gunshots, sword attacks) the player. After some time of the player not being seen,
-                                    he is forgotten (the target blackboard value is cleared). Upon the player being
-                                    detected (the blackboard target value is set), the melee enemy will move towards the
-                                    player and try to face him, while the ranged enemies will try to keep a relative
+                                <p>Making use of Unreal Engine's Pawn Sensing, the enemy can see and hear
+                                    (footsteps,
+                                    gunshots, sword attacks) the player. After some time of the player not being
+                                    seen,
+                                    he is forgotten (the target blackboard value is cleared). Upon the player
+                                    being
+                                    detected (the blackboard target value is set), the melee enemy will move
+                                    towards the
+                                    player and try to face him, while the ranged enemies will try to keep a
+                                    relative
                                     distance.
                                 </p>
                                 <p>If the player is quite far, the movement speed of the enemy is higher.</p>
-                                <p>If the player is not currently detected (the blackboard target value is not set),
-                                    the enemy will pick a random navigable point and wander to it at a slow speed.</p>
+                                <p>If the player is not currently detected (the blackboard target value is not
+                                    set),
+                                    the enemy will pick a random navigable point and wander to it at a slow
+                                    speed.</p>
                                 <h4>Attack</h4>
-                                <p>The enemy's weapon and hp are customizable in the editor, enabling a wide range of
-                                    possible enemies. The same weapons used by the player (same class) can be used by
+                                <p>The enemy's weapon and hp are customizable in the editor, enabling a wide
+                                    range of
+                                    possible enemies. The same weapons used by the player (same class) can be
+                                    used by
                                     the enemy, with slight tweaks (the ranged enemy does not require ammo).</p>
                                 <section id="story"></section>
                                 <h2>Story</h2>
-                                <p>The game's storyline follows the adventure of the last remaining consciousness on
+                                <p>The game's storyline follows the adventure of the last remaining
+                                    consciousness on
                                     planet
-                                    Earth: four androids, on a barren lifeless land, slowly decaying. You have to do
+                                    Earth: four androids, on a barren lifeless land, slowly decaying. You have
+                                    to do
                                     something
                                     about the world's current state before you perish.</p>
-                                <p>The elder android brings a solution: using the last remaining resources he could
+                                <p>The elder android brings a solution: using the last remaining resources he
+                                    could
                                     find,
-                                    he manages to build a portal to the past. But it has limitations. Only one person
+                                    he manages to build a portal to the past. But it has limitations. Only one
+                                    person
                                     can
-                                    go in at a time, and its unstability makes it uncertain about how many times it can
+                                    go in at a time, and its unstability makes it uncertain about how many times
+                                    it can
                                     successfully be used.</p>
-                                <p>The humans from the far past are the ones that destroyed all life on earth. They
+                                <p>The humans from the far past are the ones that destroyed all life on earth.
+                                    They
                                     evolved
-                                    too fast, made too many stupid choices. The game for power brought their end. </p>
+                                    too fast, made too many stupid choices. The game for power brought their
+                                    end. </p>
                                 <h3>Your mission</h3>
-                                <p>You are the last combat-type android remaining in your group. You must go back to the
-                                    past at key moments in humanity's history and slow their evolution down as much as
+                                <p>You are the last combat-type android remaining in your group. You must go
+                                    back to the
+                                    past at key moments in humanity's history and slow their evolution down as
+                                    much as
                                     possible.</p>
                                 <h3>In-Game Limitations</h3>
-                                <p>You can't take any resources with you to the past to aid in your mission, nor can you
-                                    bring resources from the past to the present. You must do with what you can find in
+                                <p>You can't take any resources with you to the past to aid in your mission, nor
+                                    can you
+                                    bring resources from the past to the present. You must do with what you can
+                                    find in
                                     the
                                     past, survive, and fulfill your mission.</p>
                                 <h3>Story Progress</h3>
-                                <p>As you fulfill your missions, your present keeps changing. The sky gets clearer,
+                                <p>As you fulfill your missions, your present keeps changing. The sky gets
+                                    clearer,
                                     water
-                                    sources start showing. But you only get weaker... frailer. After all, you are
+                                    sources start showing. But you only get weaker... frailer. After all, you
+                                    are
                                     humanity's
                                     <strong>greatest creation.</strong></p>
 
                                 <h2>Full Gameplay</h2>
-                                <iframe width="100%" height="515"
+                                <iframe width="100%" height="515" class="zoom-on-hover"
                                         src="https://www.youtube.com/embed/b04zl2WIN4Q?si=_I7Z19YzTAeLBje_"
                                         title="YouTube video player" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen></iframe>
                                 <div style="margin-top: 20px"></div>
 
                             </div>

@@ -1057,6 +1057,13 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 .work-entry .desc .read {
     text-align: right;
 }
+.zoom-on-hover {
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+}
+.zoom-on-hover:hover {
+    transform: scale(1.04);
+}
 
 .work-entry .desc .read a {
     color: #e5e5e5;
@@ -1808,14 +1815,52 @@ input[type="text"] {
     /* Match the size and style of your existing icons */
     font-size: inherit;
     color: inherit;
+    transition: color 0.3s ease;
 }
 
 /* If needed, add hover effects to match your existing icons */
 .colorlib-social-icons a:hover .fa-discord {
     /* Match your existing hover effects */
+    color: #aa77d7;
+}
+.fa-itch-io {
+    /* Match the size and style of your existing icons */
+    font-size: inherit;
     color: inherit;
+    transition: color 0.3s ease;
 }
 
+/* If needed, add hover effects to match your existing icons */
+.colorlib-social-icons a:hover .fa-itch-io {
+    /* Match your existing hover effects */
+    color: #aa77d7;
+}
+.icon-github {
+    /* Match the size and style of your existing icons */
+    font-size: inherit;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* If needed, add hover effects to match your existing icons */
+.colorlib-social-icons a:hover .icon-github {
+    /* Match your existing hover effects */
+    color: #aa77d7;
+
+}
+.icon-linkedin2 {
+    /* Match the size and style of your existing icons */
+    font-size: inherit;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* If needed, add hover effects to match your existing icons */
+.colorlib-social-icons a:hover .icon-linkedin2 {
+    /* Match your existing hover effects */
+    color: #aa77d7;
+
+}
 .colorlib-social-icons a:hover i {
     color: inherit;
 }
@@ -1854,12 +1899,13 @@ input[type="text"] {
     border-radius: 10px;
     font-size: 16px;
     box-shadow: 0 8px 14px rgba(255, 255, 255, 0.2);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    transition: background 0.5s, box-shadow 0.6s cubic-bezier(0.4,0,0.2,1), color 0.5s;
 }
 
 .click-button a:hover {
     cursor: pointer;
     background: linear-gradient(155deg, #26262a, #24242a);
+    box-shadow: 8px 8px 14px rgba(202, 130, 248, 0.2); /* shifted right */
     color: #cfa3f3;
 }
 
@@ -1991,8 +2037,13 @@ html {
      box-shadow: 0 4px 30px rgba(222, 222, 222, 0.1);
      max-width: 500px;
      margin-top: 20px;
+     transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+     will-change: transform;
  }
 
+.skill-box:hover {
+    transform: scale(1.04);
+}
 .legend {
     display: block;
     justify-content: space-between;
@@ -2111,9 +2162,9 @@ h1, h2, h3, h4, h5, h6 a{
 }
 .go-back-arrow {
     position: fixed;
-    top: 10px;
-    left: 20px;
-    font-size: 35px;
+    top: 2%;
+    left: 5%;
+    font-size: 43px;
     color: #e1e1e1;
     z-index: 10;
     transition: color 0.3s;

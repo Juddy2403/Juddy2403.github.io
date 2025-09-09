@@ -62,44 +62,26 @@
 </style>
 
 <body>
-<div class="sidebar-hover">
-    <div class="left-table" style="background-image: url(images/border3.jpg); background-size: cover;">
-        <a href="index.html" class="go-back-arrow" aria-label="Go back">
-            <i class="icon-arrow-left-outline"></i>
-        </a>
-        <div style="text-align: center;">
-            <a href="#">
-                <img src="images/logo.png" alt="Logo"
-                     style="width: 80px; height: 80px; margin-top:10px; object-fit: cover;">
-            </a>
-        </div>
-        <div style="height: 20px;"></div>
-        <div class="table-content">
-            <a href="#about"> <span>About</span></a>
+<a href="index.html" class="go-back-arrow" aria-label="Go back">
+    <i class="icon-arrow-left-outline"></i>
+</a>
+<div id="sidebar-container"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('sidebar-container').innerHTML = html;
+                document.getElementById('sidebar-table-content').innerHTML = `
+                       <a href="#about"> <span>About</span></a>
             <a href="#whatidid"> <span>What I did</span></a>
             <a href="#theteam"> <span>The team</span></a>
             <a href="#contact"> <span>Contact</span></a>
-        </div>
-        <div class="center-block" style="margin-top: auto; margin-bottom: 40px;">
-            <p class="colorlib-social-icons">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/Juddy2403">
-                    <i class="icon-github"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer"
-                   href="https://www.linkedin.com/in/ioana-raileanu-147725252/">
-                    <i class="icon-linkedin2"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer" href="https://discord.com/users/519186019564912680">
-                    <i class="fa-brands fa-discord"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer"
-                   href="https://juddy24.itch.io/">
-                    <i class="fa-brands fa-itch-io"></i>
-                </a>
-            </p>
-        </div>
-    </div>
-</div>
+                    `;
+            });
+    });
+</script>
+
 <div id="colorlib-page">
 
     <div id="colorlib-work">
@@ -110,7 +92,7 @@
             <div class="row">
                 <div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
                     <span>Portfolio</span>
-                    <h2>Reel It In</h2>
+                    <h2 class="zoom-on-hover">Reel It In</h2>
                 </div>
             </div>
 
@@ -127,15 +109,24 @@
                         <p class="work-img"
                            style="background-image: url(https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-15/632535/3840xAUTO/bfBp0I-Juddy2403.png);">
                         </p>
-                        <div class="click-button" style="margin-left: 5%;">
-                            <a href="https://gelearthur.itch.io/group16reelitin"
-                               target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-itch-io" style="font-size: 28px;">
-                                </i>
-                                <i style="font-size: 22px;">
-                                    Check it on itch!
-                                </i>
-                            </a>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;  padding-left: 5%;
+    padding-right: 5%;">
+                            <div class="click-button">
+                                <!-- Left button -->
+                                <a href="https://gelearthur.itch.io/group16reelitin" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-itch-io" style="font-size: 28px;"></i>
+                                    <i style="font-size: 22px;">Check it on itch!</i>
+                                </a>
+                            </div>
+                            <div class="click-button">
+                                <!-- Right button -->
+                                <a href="https://github.com/Juddy2403/ReelItIn" target="_blank"
+                                   rel="noopener noreferrer">
+                                    <i class="icon-github" style="font-size: 28px;"></i>
+                                    <i style="font-size: 22px;">Check it on github!</i>
+                                </a>
+                            </div>
                         </div>
                         <div class="tags-container">
                             <span>Unity 6</span>
@@ -176,7 +167,7 @@
                                     <strong>Download</strong>
                                 </a></p>
                                 <h2>Trailer</h2>
-                                <iframe width="100%" height="515"
+                                <iframe width="100%" height="515" class="zoom-on-hover"
                                         src="https://www.youtube.com/embed/xz8vwJNW9XA?si=nWyuGuaH32Ls9kRI"
                                         title="YouTube video player" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -211,7 +202,7 @@
                                     seen on the <a href="https://gelearthur.itch.io/reelitin/devlog">devlog</a>.</p>
                                 <p>
                                     <img src="https://i.imgur.com/icgZIpg.gif"
-                                         alt="Description"
+                                         alt="Description" class="zoom-on-hover"
                                          style="max-width:100%; margin-top:10px; border-radius: 10px;">
                                 </p>
                                 <h3>Other mentions</h3>
@@ -221,15 +212,15 @@
                                     bug fixing.
                                     I was always available to answer questions and help my teammates.</p>
                                 <p style="display: flex; gap: 10px; justify-content: center;">
-                                    <img src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-15/632535/3840xAUTO/ldjpcg-Juddy2403.png"
+                                    <img class="zoom-on-hover" src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-15/632535/3840xAUTO/ldjpcg-Juddy2403.png"
                                          alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
-                                    <img src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-15/437854/3840xAUTO/sMWSn_-Juddy2403.png"
+                                    <img class="zoom-on-hover" src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-15/437854/3840xAUTO/sMWSn_-Juddy2403.png"
                                          alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
                                 </p>
                                 <p style="display: flex; gap: 10px; justify-content: center;">
-                                    <img src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-15/437854/3840xAUTO/Om7Piy-Juddy2403.png"
+                                    <img class="zoom-on-hover" src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-15/437854/3840xAUTO/Om7Piy-Juddy2403.png"
                                          alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
-                                    <img src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-15/632535/3840xAUTO/bfBp0I-Juddy2403.png"
+                                    <img class="zoom-on-hover" src="https://d3stdg5so273ei.cloudfront.net/Juddy2403/2025-06-15/632535/3840xAUTO/bfBp0I-Juddy2403.png"
                                          alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
                                 </p>
                                 <div style="margin-top: 120px;"></div>

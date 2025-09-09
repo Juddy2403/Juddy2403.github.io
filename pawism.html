@@ -62,45 +62,26 @@
 </style>
 
 <body>
-<div class="sidebar-hover">
-    <div class="left-table" style="background-image: url(images/border3.jpg); background-size: cover;">
-        <a href="index.html" class="go-back-arrow" aria-label="Go back">
-            <i class="icon-arrow-left-outline"></i>
-        </a>
-        <div style="text-align: center;">
-            <a href="#">
-                <img src="images/logo.png" alt="Logo"
-                     style="width: 80px; height: 80px; margin-top:10px; object-fit: cover;">
-            </a>
-        </div>
-        <div style="height: 20px;"></div>
-        <div class="table-content">
-            <a href="#about"> <span>About</span></a>
+<a href="index.html" class="go-back-arrow" aria-label="Go back">
+    <i class="icon-arrow-left-outline"></i>
+</a>
+<div id="sidebar-container"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('sidebar-container').innerHTML = html;
+                document.getElementById('sidebar-table-content').innerHTML = `
+                        <a href="#about"> <span>About</span></a>
             <a href="#whatidid"> <span>What I did</span></a>
             <a href="#gameplay"> <span>Gameplay</span></a>
             <a href="#theteam"> <span>The team</span></a>
             <a href="#contact"> <span>Contact</span></a>
-        </div>
-        <div class="center-block" style="margin-top: auto; margin-bottom: 40px;">
-            <p class="colorlib-social-icons">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/Juddy2403">
-                    <i class="icon-github"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer"
-                   href="https://www.linkedin.com/in/ioana-raileanu-147725252/">
-                    <i class="icon-linkedin2"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer" href="https://discord.com/users/519186019564912680">
-                    <i class="fa-brands fa-discord"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer"
-                    href="https://juddy24.itch.io/">
-                <i class="fa-brands fa-itch-io"></i>
-            </a>
-            </p>
-        </div>
-    </div>
-</div>
+                    `;
+            });
+    });
+</script>
 <div id="colorlib-page">
 
     <div id="colorlib-work">
@@ -111,7 +92,7 @@
             <div class="row">
                 <div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
                     <span>Portfolio</span>
-                    <h2>Pawism</h2>
+                    <h2 class="zoom-on-hover">Pawism</h2>
                 </div>
             </div>
 
@@ -128,15 +109,23 @@
                         <p class="work-img"
                            style="background-image: url(images/pawism2.png);">
                         </p>
-                        <div class="click-button" style="margin-left: 5%;">
-                            <a href="https://github.com/DijiOfficial/GameJam2025"
-                               target="_blank" rel="noopener noreferrer">
-                                <i class="icon-github" style="font-size: 28px;">
-                                </i>
-                                <i style="font-size: 22px;">
-                                    Check it on github!
-                                </i>
-                            </a>
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;  padding-left: 5%;
+    padding-right: 5%;">
+                            <div class="click-button">
+                                <!-- Left button -->
+                                <a href="https://va-vahit-sh.itch.io/paw-ism" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-itch-io" style="font-size: 28px;"></i>
+                                    <i style="font-size: 22px;">Check it on itch!</i>
+                                </a>
+                            </div>
+                            <div class="click-button">
+                                <!-- Right button -->
+                                <a href="https://github.com/DijiOfficial/Pawism" target="_blank"
+                                   rel="noopener noreferrer">
+                                    <i class="icon-github" style="font-size: 28px;"></i>
+                                    <i style="font-size: 22px;">Check it on github!</i>
+                                </a>
+                            </div>
                         </div>
                         <div class="tags-container">
                             <span>Unreal Engine 5</span>
@@ -171,6 +160,14 @@
                                         target="_blank" rel="noopener noreferrer">
                                     <strong>Download on itch</strong>
                                 </a></p>
+                                <h2>Gameplay Video</h2>
+                                <iframe width="100%" height="515" class="zoom-on-hover"
+                                        src="https://www.youtube.com/embed/P2uqjm3WtLk?si=DaTGduEoxaS7KCsU"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <div style="margin-top: 20px"></div>
+
                                 <section id="whatidid"></section>
                                 <h2>What I did</h2>
                                 <p>
@@ -187,7 +184,7 @@
                                     and searching for the player when losing sight of them.
                                 </p>
                                 <p>
-                                    <img src="images/Pawism%20(2).png"
+                                    <img src="images/Pawism%20(2).png" class="zoom-on-hover"
                                          alt="Description"
                                          style="max-width:100%; margin-top:10px; border-radius: 10px;">
                                 </p>
@@ -204,10 +201,10 @@
                                     in each room. You have to do all this while avoiding the cleaning lady, who will
                                     chase you if she spots you.
                                 </p>
-                                <p  style="display: flex; gap: 10px; justify-content: center;">
-                                    <img src="images/Pawism%20(5).png"
+                                <p style="display: flex; gap: 10px; justify-content: center;">
+                                    <img src="images/Pawism%20(5).png" class="zoom-on-hover"
                                          alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
-                                    <img src="images/Pawism%20(3).png"
+                                    <img src="images/Pawism%20(3).png" class="zoom-on-hover"
                                          alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
                                 </p>
                                 <p>
@@ -216,7 +213,7 @@
                                     will spread the blood of your sacrifices in a big pentagram shape on the floor.
                                 </p>
                                 <p>
-                                    <img src="images/Pawism%20(4).png"
+                                    <img src="images/Pawism%20(4).png" class="zoom-on-hover"
                                          alt="Description"
                                          style="max-width:100%; margin-top:10px; border-radius: 10px;">
                                 </p>
@@ -227,7 +224,7 @@
                                     riding the roomba, and spread more mice blood while he's in cooldown!
                                 </p>
                                 <p>
-                                    <img src="images/Pawism%20(1).png"
+                                    <img src="images/Pawism%20(1).png" class="zoom-on-hover"
                                          alt="Description"
                                          style="max-width:100%; margin-top:10px; border-radius: 10px;">
                                 </p>
@@ -262,12 +259,14 @@
                                 <h3 class="text-center">Artists</h3>
                                 <div class="tags-container" style="padding-bottom: 10px; padding-top: 0px;">
                                     <p class="click-button" style="margin: 10px">
-                                        <a href="https://www.artstation.com/ralucacocos" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://www.artstation.com/ralucacocos" target="_blank"
+                                           rel="noopener noreferrer">
                                             Raluca Cocoș
                                         </a>
                                     </p>
                                     <p class="click-button" style="margin: 10px">
-                                        <a href="https://www.linkedin.com/in/vahit-saygin-a84a80295/" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://www.linkedin.com/in/vahit-saygin-a84a80295/" target="_blank"
+                                           rel="noopener noreferrer">
                                             Vahit Saygin
                                         </a>
                                     </p>
