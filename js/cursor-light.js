@@ -12,8 +12,8 @@ document.addEventListener('mousemove', e => {
     const y = e.clientY;
     light.style.background = `
         radial-gradient(circle at ${x}px ${y}px,
-            rgba(207,163,243,0.15) 0px,
-            rgba(207,163,243,0.05) 100px,
+            rgba(207,163,243,0.1) 0px,
+            rgba(207,163,243,0.03) 100px,
             rgba(255,255,255,0.0) 200px)
     `;
 });
