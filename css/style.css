@@ -1981,7 +1981,8 @@ input[type="text"] {
     color: #e7e7e7;
     line-height: 2.2; /* Adjust to tighten vertical spacing */
     margin: 0; /* Optional: reset any default margins */
-    text-align: center;
+    text-align: left;
+    padding-left: 50px;
     font-size: 25px;
     font-family: "Playfair Display", Georgia, serif;
     font-weight: 700;
@@ -2190,4 +2191,26 @@ h1, h2, h3, h4, h5, h6 a{
 .go-back-arrow:hover {
     color: #cfa3f3;
     cursor: pointer;
+}
+
+/* Add to your css/style.css */
+#img-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+/* css/style.css */
+#img-modal img {
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+}
+
+#close-modal:hover {
+    color: #aa77d7; /* or use var(--accent-color-hover) */
+    transition: color 0.3s;
 }

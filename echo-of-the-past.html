@@ -68,7 +68,7 @@
 </a>
 <div id="sidebar-container"></div>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         fetch('sidebar.html')
             .then(response => response.text())
             .then(html => {
@@ -76,6 +76,10 @@
                 document.getElementById('sidebar-table-content').innerHTML = `
                         <a href="#about"><span>About</span></a>
                         <a href="#whatidid"><span>What I did</span></a>
+                        <a href="#perspective"><span style="font-size:18px; font-weight:100;">- Perspective</span></a>
+                        <a href="#weapons"><span style="font-size:18px; font-weight:100;">- Weapons</span></a>
+                        <a href="#damage"><span style="font-size:18px; font-weight:100;">- Damage</span></a>
+                        <a href="#ai"><span style="font-size:18px; font-weight:100;">- Enemy AI</span></a>
                         <a href="#story"><span>Story</span></a>
                         <a href="#contact"><span>Contact</span></a>
                     `;
@@ -153,8 +157,7 @@ background-size: cover; background-position: right;">
                                     it
                                     even after the deadline, making it a personal project instead.</p>
                                 <p class="read hover-underline"><a
-                                        href="https://github.com/Juddy2403/EchoOfThePast/releases/download/V3.5/EchoOfThePast.zip"
-                                        target="_blank" rel="noopener noreferrer">
+                                        href="https://github.com/Juddy2403/EchoOfThePast/releases/download/V3.5/EchoOfThePast.zip">
                                     <strong>Download</strong>
                                 </a></p>
                                 <h2>Trailer</h2>
@@ -174,6 +177,7 @@ background-size: cover; background-position: right;">
                                     narrative,
                                     and created the UI.
                                 </p>
+                                <section id="perspective"></section>
                                 <h3> Perspective challenges</h3>
                                 <p> The combat changes become quite difficult to program when you take
                                     perspective into
@@ -183,7 +187,8 @@ background-size: cover; background-position: right;">
                                     changes
                                     drastically if it's, for example, sitting on the ground. The cursor will
                                     never point
-                                    where you want either, and ranged attacks will never hit.</p>
+                                    where you want either, and ranged attacks will never hit. This is why a simple
+                                    visibility raycast won't do.</p>
 
                                 <h4>So, how did I do it?</h4>
                                 <p> Using a custom trace channel that only hits one plane going through the
@@ -201,7 +206,7 @@ background-size: cover; background-position: right;">
                                 <p> However, one issue still remains. How would the player know whether he's
                                     using melee
                                     or ranged before attacking?</p>
-                                <p> That's where the melee radius comes into plane. Just as the cursor plane,
+                                <p> That's where the melee radius comes into play. Just as the cursor plane,
                                     the melee
                                     radius runs through the middle of the player. Using a custom material with a
                                     texture
@@ -220,6 +225,38 @@ background-size: cover; background-position: right;">
                                             class="zoom-on-hover" alt="Description"
                                             style="max-width:60%; margin-top:10px; border-radius: 10px;"/>
                                 </p>
+                                <h4>But what happens when there are objects between the camera and the player?</h4>
+                                <p>Initially I tried using a plugin to ease my workload. However, it created more issues
+                                    than it solved. It would fade entire meshes when one part of the mesh was in the
+                                    way,
+                                    sometimes fading the floor or ceiling. It would also cause random crashes.</p>
+                                <p>Seeing I had no other choice, I took the matter in my own hands.</p>
+                                <p>I wrote a material function that sets the opacity mask's value to 0 whenever a point
+                                    is in between the camera and the character. I added a slight offset to prevent the
+                                    objects directly next to the player from getting obstructed.</p>
+                                <p>
+                                    <img
+                                            src="images/EchoOfThePast4.png"
+                                            alt="Description" class="zoom-on-hover"
+                                            style="max-width:100%; margin-top:10px; border-radius: 10px;"/>
+                                </p>
+                                <p>I then wrote a python script that connects the material function to the opacity mask
+                                    node for all opaque materials and changes their blend mode to masked. For objects
+                                    already masked, I multiplied the initial material's opacity mask with my material
+                                    function.
+                                </p>
+                                <p>This is the result.</p>
+                                <p style="display: flex; gap: 10px; justify-content: center;">
+                                    <img
+                                            src="images/EchoOfThePast1%20(2).png"
+                                            class="zoom-on-hover" alt="Description"
+                                            style="max-width:60%; margin-top:10px; border-radius: 10px;"/>
+                                    <img
+                                            src="images/EchoOfThePast1%20(3).png"
+                                            class="zoom-on-hover" alt="Description"
+                                            style="max-width:60%; margin-top:10px; border-radius: 10px;"/>
+                                </p>
+                                <section id="weapons"></section>
                                 <h3>Weapons</h3>
                                 <p>I offer a variety of different weapons within my game, all with different
                                     stats.
@@ -258,6 +295,7 @@ background-size: cover; background-position: right;">
                                             class="zoom-on-hover" alt="Description"
                                             style="max-width:60%; margin-top:10px; border-radius: 10px;"/>
                                 </p>
+                                <section id="damage"></section>
                                 <h3>Damage System</h3>
                                 <p>As observed, all weapons have a crit rate, speed/fire rate, attack. The fire
                                     rate is
@@ -267,16 +305,32 @@ background-size: cover; background-position: right;">
                                     the
                                     chance to score more damage. There's also a random chance of missing. </p>
                                 <h4>Stagger mechanic</h4>
+                                <div class="row">
+                                    <div class="col-md-6" style="text-align: center;">
+                                        <h4>Melee enemy</h4>
+                                        <p>Just before attacking, they become staggarable, leaving them an easy
+                                            target for the one wielding a fast sword. A VFX plays as an
+                                            indicator of when the enemy can be staggered.</p>
+                                        <img
+                                                src="images/EchoOfThePast5.png"
+                                                alt="Description" class="zoom-on-hover"
+                                                style="max-width:100%; height:300px; margin-top:10px; border-radius: 10px;"/>
+                                    </div>
+                                    <div class="col-md-6" style="text-align: center;">
+                                        <h4>Ranged enemy</h4>
+                                        <p>When they are about to shoot, a laser beam shows as an indicator of where
+                                        they're aiming. While the beam is visible, the ranged enemy is
+                                        left vulnerable to getting staggered.</p>
+                                        <img
+                                                src="images/EchoOfThePast1%20(1).png"
+                                                alt="Description" class="zoom-on-hover"
+                                                style="max-width:100%; height:300px; margin-top:10px; border-radius: 10px;"/>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 10px"></div>
                                 <p>
-                                    The enemies are also of two types: melee and ranged. The melee enemies have
-                                    a
-                                    weakness: just before attacking, they become staggarable, leaving them an
-                                    easy
-                                    target for the one wielding a fast sword. Upon being staggered, they stop
-                                    their
-                                    attack and become immobile for a short amount of time. A VFX plays as an
-                                    indicator
-                                    when an enemy can be staggered.
+                                    Upon being staggered, the enemies stop their
+                                    attack and become immobile for a short amount of time.
                                 </p>
                                 <h4>Floating Point VFX</h4>
                                 <p>The damage done, as well as misses or staggers can be seen as a floating
@@ -288,6 +342,7 @@ background-size: cover; background-position: right;">
                                 <p>A different attack animation is used based on the current combo type, with
                                     the last
                                     attack of the combo always being a crit.</p>
+                                <section id="ai"></section>
                                 <h3>Enemy AI</h3>
                                 <p>The enemy follows a relatively simple Behavior Tree, with small changes
                                     between the
@@ -395,7 +450,6 @@ background-size: cover; background-position: right;">
                 });
         </script>
     </footer>
-
 </div>
 
 <!-- jQuery -->
@@ -416,6 +470,14 @@ background-size: cover; background-position: right;">
 <script src="js/main.js"></script>
 <div id="cursor-light"></div>
 <script src="js/cursor-light.js"></script>
+<!-- Add this modal structure at the end of your <body> -->
+<div id="img-modal" style="display:none;">
+  <span id="close-modal" style="
+    position: absolute; top: 20px; right: 40px; font-size: 40px; color: #fff; cursor: pointer; z-index: 1001;">&times;</span>
+    <img id="modal-img" src="" alt="Preview" style="
+    display: block; max-width: 90vw; max-height: 90vh; margin: 60px auto; border-radius: 12px; box-shadow: 0 4px 30px rgba(0,0,0,0.4);">
+</div>
 </body>
+
 </html>
 
