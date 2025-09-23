@@ -6,8 +6,8 @@
     font-style: normal;
 }
 :root {
-        --accent-color: #c07fe3;
-    --accent-color-hover: #5647bb;
+        --accent-color: #c87eee;
+    --accent-color-hover: #755af1;
 }
 /* =======================================================
 *
@@ -2065,7 +2065,8 @@ html {
 }
 
 .legend .beginner-dot,
-.legend .intermediate-dot {
+.legend .intermediate-dot,
+.legend .advanced-dot {
     width: 40px;
     height: 12px;
     border-radius: 6px;
@@ -2075,7 +2076,7 @@ html {
 }
 
 .beginner-dot,
-.intermediate-dot {
+.intermediate-dot, .advanced-dot {
     width: 30px;
     height: 12px;
     border-radius: 6px;
@@ -2090,6 +2091,10 @@ html {
 
 .intermediate-dot {
     background-color: var(--accent-color-hover);
+}
+
+.advanced-dot {
+    background-color: #253cab;
 }
 
 .skill {
