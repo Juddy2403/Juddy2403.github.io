@@ -2087,15 +2087,15 @@ html {
 }
 
 .beginner-dot {
-    background-color: #B788F8FF; /* lighter & brighter lavender purple */
+    background-color: #e8a1ff; /* lighter & brighter lavender purple */
 }
 
 .intermediate-dot {
-    background-color: #5A3BE6FF; /* deeper, more saturated violet */
+    background-color: #7044e0; /* deeper, more saturated violet */
 }
 
 .advanced-dot {
-    background-color: #1B2C8FFF; /* darker, richer blue-purple */
+    background-color: #2617af; /* darker, richer blue-purple */
 }
 
 .skill {
