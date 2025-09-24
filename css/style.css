@@ -1808,7 +1808,8 @@ input[type="text"] {
 }
 
 .about-img-top {
-    padding-top: 2em;
+    padding-top: 17%;
+    padding-left:10%;
 }
 
 .fa-discord {
@@ -2187,8 +2188,8 @@ h1, h2, h3, h4, h5, h6 a{
 }
 .go-back-arrow {
     position: fixed;
-    top: 2%;
-    left: 5%;
+    top: 1%;
+    left: 96%;
     font-size: 43px;
     color: #e1e1e1;
     z-index: 10;
@@ -2220,3 +2221,40 @@ h1, h2, h3, h4, h5, h6 a{
     color: #aa77d7; /* or use var(--accent-color-hover) */
     transition: color 0.3s;
 }
+
+.sidebar-burger {
+    position: relative;
+    top: 2%;
+    left: 96%;
+    z-index: 1000;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(43, 17, 55);
+    box-shadow: 20px 10px 20px -10px rgba(255, 255, 255, 0.35);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity 0.3s, transform 0.4s;
+}
+
+.sidebar-hover:hover .sidebar-burger {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.4s;
+}
+
+.sidebar-burger span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin: 4px 0;
+    background: #e5e5e5;
+    border-radius: 2px;
+    transition: background 0.3s;
+}
+
