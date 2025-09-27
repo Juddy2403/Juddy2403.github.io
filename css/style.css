@@ -1079,6 +1079,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 .zoom-on-hover {
     transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
     will-change: transform;
+    border-radius:10px;
 }
 .zoom-on-hover:hover {
     transform: scale(1.04);
