@@ -19,7 +19,7 @@ light.style.left = 0;
 light.style.width = '100vw';
 light.style.height = '100vh';
 light.style.pointerEvents = 'none';
-light.style.zIndex = -1;
+light.style.zIndex = 0;
 
 document.addEventListener('mousemove', e => {
     const x = e.clientX;
