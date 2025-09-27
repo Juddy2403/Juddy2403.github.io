@@ -1,12 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('img.zoom-on-hover').forEach(img => {
         img.style.cursor = 'pointer';
-        img.addEventListener('click', function() {
+        img.addEventListener('click', function () {
             document.getElementById('modal-img').src = this.src;
             document.getElementById('img-modal').style.display = 'flex';
         });
     });
-    document.getElementById('close-modal').onclick = function() {
+    document.getElementById('close-modal').onclick = function () {
         document.getElementById('img-modal').style.display = 'none';
     };
 });
@@ -34,7 +34,7 @@ document.addEventListener('mousemove', e => {
 
 // js/cursor-light.js or a new file
 document.querySelectorAll('.zoom-on-hover').forEach(img => {
-    img.addEventListener('click', function(e) {
+    img.addEventListener('click', function (e) {
         const modal = document.getElementById('img-modal');
         const modalImg = document.getElementById('modal-img');
         modal.style.display = 'flex';
@@ -48,8 +48,8 @@ document.querySelectorAll('.zoom-on-hover').forEach(img => {
         const imgCenterY = rect.top + rect.height / 2;
 
         // Calculate translation
-        const translateX = - centerX + imgCenterX;
-        const translateY = - centerY + imgCenterY;
+        const translateX = -centerX + imgCenterX;
+        const translateY = -centerY + imgCenterY;
 
         // Set initial transform to match clicked image
         modalImg.style.transition = 'none';
@@ -63,3 +63,40 @@ document.querySelectorAll('.zoom-on-hover').forEach(img => {
     });
 });
 
+// ---------- Hover videos ----------
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.work-img[data-video]');
+    cards.forEach(card => {
+        const src = card.getAttribute('data-video');
+        if (!src) return;
+
+        // Create the muted, looping video
+        const vid = document.createElement('video');
+        vid.src = src;
+        vid.muted = true;               // required for autoplay policies
+        vid.loop = true;                // loop as requested
+        vid.preload = 'auto';           // short clips; preloading is fine
+        vid.playsInline = true;         // iOS inline playback
+        vid.setAttribute('playsinline', '');
+
+        // Insert as background layer
+        card.insertBefore(vid, card.firstChild);
+
+        // Hover handlers: play on enter, pause on leave (no reset)
+        card.addEventListener('mouseenter', () => {
+            // ensure video element is ready before play
+            const play = () => vid.play().catch(() => {
+            });
+            if (vid.readyState >= 2) play();
+            else vid.addEventListener('canplay', play, {once: true});
+        });
+
+        card.addEventListener('mouseleave', () => {
+            vid.pause();
+            // keep currentTime unchanged so it resumes next hover
+        });
+
+        // Optional: pause if user navigates away by clicking
+        card.addEventListener('click', () => vid.pause());
+    });
+});
