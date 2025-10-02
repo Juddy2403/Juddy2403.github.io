@@ -2417,3 +2417,35 @@ h1, h2, h3, h4, h5, h6 a{
     }
 }
 
+/* Link layout (keeps your width + centering) */
+.cv-link {
+    width: 120px;
+    justify-content: center;
+}
+
+/* --- Masked icon (preferred) --- */
+.cv-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: #e5e5e5;
+    vertical-align: middle;
+    margin-right: 12px;
+    position: relative;
+    /* Mask properties for WebKit and standard */
+    -webkit-mask-image: url("../images/CV-icon.png");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+
+    mask-image: url("../images/CV-icon.png");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    transition: background 0.3s;
+}
+
+.click-button:hover .cv-icon {
+    background-color: #cfa3f3; /* the exact color you want */
+}
+
