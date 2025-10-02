@@ -501,6 +501,14 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
     width: 40px;
     height: 1px;
 }
+@media screen and (max-width: 768px) {
+    .rotate {
+        opacity:0;
+    }
+    .rotate .heading {
+        opacity:0;
+    }
+}
 
 .about-desc {
     padding-top: 3em;
@@ -2221,6 +2229,14 @@ h1, h2, h3, h4, h5, h6 a{
     cursor: pointer;
 }
 
+@media (max-width: 767px) {
+    .go-back-arrow {
+        top:15px;
+        left:auto;
+        right: 30px;
+        font-size: 40px;
+    }
+}
 /* Add to your css/style.css */
 #img-modal {
     position: fixed;
@@ -2327,7 +2343,8 @@ h1, h2, h3, h4, h5, h6 a{
 
 @media (max-width: 767px) {
     .intro-bg-container {
-        top:120px;
+        height: 9%;
+        top:2%;
     }
 }
 
