@@ -529,6 +529,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
     left: 30px;
 }
 
+
 .about-desc .rotate .heading {
     font-family: "Karla", Arial, sans-serif;
     font-size: 14px;
@@ -2322,5 +2323,11 @@ h1, h2, h3, h4, h5, h6 a{
     background: rgba(17, 8, 35, 0.68); /* dark overlay */
     z-index: -2;
     pointer-events: none;
+}
+
+@media (max-width: 767px) {
+    .intro-bg-container {
+        top:120px;
+    }
 }
 
