@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const vid = document.createElement('video');
         vid.src = src;
         vid.muted = true;               // required for autoplay policies
+        vid.setAttribute('muted','');
         vid.loop = true;                // loop as requested
         vid.preload = 'auto';           // short clips; preloading is fine
         vid.playsInline = true;         // iOS inline playback
@@ -97,15 +98,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         card.addEventListener('touchstart', () => {
-                console.log("touched");
-                const play = () => vid.play().catch(() => {
-                });
-                if (vid.readyState >= 2) play();
-                else vid.addEventListener('canplay', play, {once: true});
+            card.classList.add('show-video');
+            const play = () => vid.play().catch(() => {
+            });
+            if (vid.readyState >= 2) play();
+            else vid.addEventListener('canplay', play, {once: true});
         });
         card.addEventListener('touchend', () => {
-            console.log("stopped");
+            card.classList.remove('show-video');
             vid.pause();
         });
+        vid.addEventListener('loadeddata', () => {
+            vid.currentTime = 0; // force ready frame
+        });
+
     });
 });
