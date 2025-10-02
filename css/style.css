@@ -2085,8 +2085,10 @@ html {
     transform: scale(1.04);
 }
 .legend {
-    display: block;
+    display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /* allows wrapping if needed */
+    text-align: center;
 }
 
 .legend span {
@@ -2098,6 +2100,7 @@ html {
     gap: 12px;
 }
 
+/* Dots */
 .legend .beginner-dot,
 .legend .intermediate-dot,
 .legend .advanced-dot {
@@ -2108,6 +2111,30 @@ html {
     display: inline-block;
     text-align: center;
 }
+
+/* --- Mobile layout --- */
+@media (max-width: 767px) {
+    .legend {
+        margin-top:60px;
+        flex-direction: column;   /* stack vertically */
+        margin-bottom: 20px;      /* spacing between rows */
+
+    }
+
+    .legend span {
+        display: flex;
+        justify-content: left;  /* center text + dot */
+        margin-bottom: 20px;      /* spacing between rows */
+        font-size: 20px;          /* slightly smaller for phones */
+    }
+
+    .legend .beginner-dot,
+    .legend .intermediate-dot,
+    .legend .advanced-dot {
+        margin-top: 15px;  /* remove the big top margin */
+    }
+}
+
 
 .beginner-dot,
 .intermediate-dot, .advanced-dot {
