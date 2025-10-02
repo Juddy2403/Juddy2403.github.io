@@ -78,6 +78,32 @@
             <a href="#whatidid"> <span>What I did</span></a>
             <a href="#contact"> <span>Contact</span></a>
                     `;
+                const sidebar = document.getElementById("sidebar");
+                const burger = document.getElementById("sidebar-burger");
+                const sidebarHover = document.querySelector('.sidebar-hover');
+
+                console.log("Burger found?", burger); // debug check
+
+                if (burger && sidebar) {
+                    burger.addEventListener("click", () => {
+                        console.log("Burger clicked");
+                        sidebar.classList.toggle("active");
+                    });
+                } else {
+                    console.error("Burger or sidebar not found");
+                }
+                if (window.innerWidth >= 768) {
+                    sidebarHover.addEventListener('mouseenter', () => {
+                        burger.style.opacity = 0;
+                        burger.style.pointerEvents = 'none';
+                    });
+
+                    sidebarHover.addEventListener('mouseleave', () => {
+                        burger.style.opacity = 1;
+                        burger.style.pointerEvents = 'auto';
+                        sidebar.classList.remove("active");
+                    });
+                }
             });
     });
 </script>

@@ -65,8 +65,6 @@
             .then(response => response.text())
             .then(html => {
                 document.getElementById('sidebar-container').innerHTML = html;
-
-                // Inject links dynamically
                 document.getElementById('sidebar-table-content').innerHTML = `
                 <a href="#works"> <span>Projects</span></a>
                 <a href="#about"> <span>About</span></a>
@@ -74,7 +72,6 @@
                 <a href="#contact"> <span>Contact</span></a>
             `;
 
-                // ✅ NOW elements exist → add event listeners here
                 const sidebar = document.getElementById("sidebar");
                 const burger = document.getElementById("sidebar-burger");
                 const sidebarHover = document.querySelector('.sidebar-hover');
