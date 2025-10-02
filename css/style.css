@@ -1971,16 +1971,21 @@ input[type="text"] {
     display: flex;
     flex-direction: column;
     position: fixed;
-    box-shadow: 20px 0 20px -10px rgba(255, 255, 255, 0.35);
     top: 0;
     left: 0;
-    width: 13%;
+    width: 250px;  /* wider for mobile */
     height: 100%;
+    background-color: #f8f9fa;
+    box-shadow: 20px 0 20px -10px rgba(0, 0, 0, 0.35);
     z-index: 1000;
-    transform: translateX(-80%);
+    transform: translateX(-100%);
     transition: transform 0.3s ease;
-    background-color: #f8f9fa; /* fallback if no image */
+    will-change: transform;
 }
+.left-table.active {
+    transform: translateX(0) !important;
+}
+
 .left-table::after {
     content: '';
     position: absolute;
@@ -1990,12 +1995,6 @@ input[type="text"] {
     height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
     pointer-events: none;
-}
-
-
-/* Slide in when parent is hovered */
-.sidebar-hover:hover .left-table {
-    transform: translateX(0%);
 }
 
 .table-content span {
@@ -2244,10 +2243,10 @@ h1, h2, h3, h4, h5, h6 a{
 }
 
 .sidebar-burger {
-    position: relative;
-    top: 2%;
-    left: 98%;
-    z-index: 1000;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
     width: 48px;
     height: 48px;
     display: flex;
@@ -2255,18 +2254,10 @@ h1, h2, h3, h4, h5, h6 a{
     justify-content: center;
     align-items: center;
     background: rgb(43, 17, 55);
-    box-shadow: 20px 10px 20px -10px rgba(255, 255, 255, 0.35);
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-    transform: translateY(0);
-    opacity: 1;
-    transition: opacity 0.3s, transform 0.4s;
-}
-
-.sidebar-hover:hover .sidebar-burger {
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: opacity 0.3s, transform 0.4s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.3s;
 }
 
 .sidebar-burger span {
@@ -2276,8 +2267,28 @@ h1, h2, h3, h4, h5, h6 a{
     margin: 4px 0;
     background: #e5e5e5;
     border-radius: 2px;
-    transition: background 0.3s;
 }
+/* Desktop hover effect */
+/* Desktop hover still works */
+@media (min-width: 768px) {
+    .left-table {
+        width: 13%;
+        transform: translateX(-80%); /* peek out a bit */
+    }
+
+    .sidebar-hover:hover .left-table {
+        transform: translateX(0);
+    }
+
+}
+
+/* Mobile: disable hover logic */
+@media (max-width: 767px) {
+    .sidebar-hover:hover .left-table {
+        transform: translateX(-100%) !important;
+    }
+}
+
 
 .intro-bg-container {
     position: fixed;

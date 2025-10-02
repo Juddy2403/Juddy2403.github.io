@@ -44,6 +44,7 @@
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <style>
     body {
@@ -56,28 +57,63 @@
 </style>
 
 <body>
+
 <div id="sidebar-container"></div>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         fetch('sidebar.html')
             .then(response => response.text())
             .then(html => {
                 document.getElementById('sidebar-container').innerHTML = html;
+
+                // Inject links dynamically
                 document.getElementById('sidebar-table-content').innerHTML = `
-                      <a href="#works"> <span>Projects</span></a>
-            <a href="#about"> <span>About</span></a>
-            <a href="#skills"> <span>Skills</span></a>
-            <a href="#contact"> <span>Contact</span></a>
-                    `;
+                <a href="#works"> <span>Projects</span></a>
+                <a href="#about"> <span>About</span></a>
+                <a href="#skills"> <span>Skills</span></a>
+                <a href="#contact"> <span>Contact</span></a>
+            `;
+
+                // ✅ NOW elements exist → add event listeners here
+                const sidebar = document.getElementById("sidebar");
+                const burger = document.getElementById("sidebar-burger");
+                const sidebarHover = document.querySelector('.sidebar-hover');
+
+                console.log("Burger found?", burger); // debug check
+
+                if (burger && sidebar) {
+                    burger.addEventListener("click", () => {
+                        console.log("Burger clicked");
+                        sidebar.classList.toggle("active");
+                    });
+                } else {
+                    console.error("Burger or sidebar not found");
+                }
+                if (window.innerWidth >= 768) {
+                    sidebarHover.addEventListener('mouseenter', () => {
+                        burger.style.opacity = 0;
+                        burger.style.pointerEvents = 'none';
+                    });
+
+                    sidebarHover.addEventListener('mouseleave', () => {
+                        burger.style.opacity = 1;
+                        burger.style.pointerEvents = 'auto';
+                        sidebar.classList.remove("active");
+                    });
+                }
+
             });
+
     });
 </script>
+
 
 <div id="colorlib-page">
     <div class="container" style="margin-top: 7%; margin-bottom: 10%;">
         <div class="row">
             <div class="intro-bg-container">
-                <video class="intro-bg-video" src="videos/Presentation video - Env1.mp4" autoplay loop muted playsinline></video>
+                <video class="intro-bg-video" src="videos/Presentation video - Env1.mp4" autoplay loop muted
+                       playsinline></video>
                 <div class="intro-bg-overlay"></div>
             </div>
             <div class="col-md-7 col-lg-push-1 center-block animate-box">
@@ -151,7 +187,7 @@
                             <div class="desc">
                                 <p>This project started as a way to learn Unreal Engine’s basics, but as I explored its
                                     features, I grew to love the engine. This has become my greatest indie creation
-                                yet, and I keep coming back to it up to this day.</p>
+                                    yet, and I keep coming back to it up to this day.</p>
                                 <p class="read hover-underline"><a href="echo-of-the-past.html">View details</a></p>
                             </div>
                         </div>
@@ -523,16 +559,16 @@
 </footer>
 </div>
 <script>
-window.addEventListener('beforeunload', function() {
-localStorage.setItem('scrollPos', window.scrollY);
-});
-window.addEventListener('DOMContentLoaded', function() {
-    const scrollPos = localStorage.getItem('scrollPos');
-    if (scrollPos) {
-        window.scrollTo(0, parseInt(scrollPos, 10));
-        localStorage.removeItem('scrollPos');
-    }
-});
+    window.addEventListener('beforeunload', function () {
+        localStorage.setItem('scrollPos', window.scrollY);
+    });
+    window.addEventListener('DOMContentLoaded', function () {
+        const scrollPos = localStorage.getItem('scrollPos');
+        if (scrollPos) {
+            window.scrollTo(0, parseInt(scrollPos, 10));
+            localStorage.removeItem('scrollPos');
+        }
+    });
 </script>
 <!-- jQuery -->
 <script src="js/jquery.min.js"></script>
