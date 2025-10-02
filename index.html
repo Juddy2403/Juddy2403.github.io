@@ -561,6 +561,25 @@
             localStorage.removeItem('scrollPos');
         }
     });
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.work-img');
+
+        cards.forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.classList.add('touch-active');
+            });
+
+            card.addEventListener('touchend', () => {
+                card.classList.remove('touch-active');
+            });
+
+            // Optional: if finger slides off, remove class too
+            card.addEventListener('touchcancel', () => {
+                card.classList.remove('touch-active');
+            });
+        });
+    });
+
 </script>
 <!-- jQuery -->
 <script src="js/jquery.min.js"></script>

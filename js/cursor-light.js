@@ -96,7 +96,16 @@ document.addEventListener('DOMContentLoaded', () => {
             // keep currentTime unchanged so it resumes next hover
         });
 
-        // Optional: pause if user navigates away by clicking
-        card.addEventListener('click', () => vid.pause());
+        card.addEventListener('touchstart', () => {
+                console.log("touched");
+                const play = () => vid.play().catch(() => {
+                });
+                if (vid.readyState >= 2) play();
+                else vid.addEventListener('canplay', play, {once: true});
+        });
+        card.addEventListener('touchend', () => {
+            console.log("stopped");
+            vid.pause();
+        });
     });
 });

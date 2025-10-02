@@ -977,7 +977,8 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 }
 
 /* Fade video in only while hovered */
-.work-img:hover video {
+.work-img:hover video,
+.work-img.touch-active video {
     opacity: 1;
     transition: opacity 0.7s ease;
 }
@@ -998,7 +999,8 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
     text-align: right;
 }
 
-.work-img:hover .tags {
+.work-img:hover .tags,
+.work-img.touch-active .tags{
     opacity: 1;
     transform: translateX(0);
     visibility: visible;
@@ -1018,7 +1020,8 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
     margin-left: auto; /* Push each span to the right */
 }
 
-.work-img:hover .work-name h2 {
+.work-img:hover .work-name h2,
+.work-img.touch-active .work-name h2 {
     opacity: 0;
 }
 
@@ -1069,7 +1072,8 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 .work-entry .work-img:hover .display-t:after {
     opacity: 1;
 }
-.work-entry .work-img:hover .display-t .work-name {
+.work-entry .work-img:hover .display-t .work-name,
+.work-img.touch-active .display-t .work-name {
     opacity: 0; }
 
 @media screen and (max-width: 768px) {
