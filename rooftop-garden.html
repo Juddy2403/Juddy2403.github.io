@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ioana Raileanu - Rooftop Garden</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Add this after your icomoon.css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<style>
+    body {
+        background-image: url('images/background4.jpg'); /* Adjust path as needed */
+        background-size: cover; /* Makes the image cover the whole page */
+        background-repeat: repeat; /* Prevents tiling */
+        background-position: center; /* Centers the image */
+        background-attachment: fixed; /* Optional: keeps it fixed on scroll */
+    }
+</style>
+
+<body>
+<a href="index.html" class="go-back-arrow" aria-label="Go back">
+    <i class="icon-arrow-left-outline"></i>
+</a>
+<div id="sidebar-container"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('sidebar-container').innerHTML = html;
+                document.getElementById('sidebar-table-content').innerHTML = `
+                       <a href="#about"> <span>About</span></a>
+            <a href="#whatidid"> <span>What I did</span></a>
+            <a href="#theteam"> <span>The team</span></a>
+            <a href="#contact"> <span>Contact</span></a>
+                    `;
+                const sidebar = document.getElementById("sidebar");
+                const burger = document.getElementById("sidebar-burger");
+                const sidebarHover = document.querySelector('.sidebar-hover');
+
+                console.log("Burger found?", burger); // debug check
+
+                if (burger && sidebar) {
+                    burger.addEventListener("click", () => {
+                        console.log("Burger clicked");
+                        sidebar.classList.toggle("active");
+                    });
+                } else {
+                    console.error("Burger or sidebar not found");
+                }
+                if (window.innerWidth >= 768) {
+                    sidebarHover.addEventListener('mouseenter', () => {
+                        burger.style.opacity = 0;
+                        burger.style.pointerEvents = 'none';
+                    });
+
+                    sidebarHover.addEventListener('mouseleave', () => {
+                        burger.style.opacity = 1;
+                        burger.style.pointerEvents = 'auto';
+                        sidebar.classList.remove("active");
+                    });
+                }
+            });
+    });
+</script>
+<div class="top-bar"></div>
+
+<div id="colorlib-page">
+
+    <div id="colorlib-work">
+        <div class="container">
+            <div class="row text-center">
+                <h2 class="bold">Works</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
+                    <span>Portfolio</span>
+                    <h2>Rooftop Garden</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="rotate">
+                        <h2 class="heading">Portfolio</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="work-entry animate-box">
+                        <p class="work-img"
+                           style="background-image: url(images/RooftopGarden2.jpg);">
+                        </p>
+
+                        <!--                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;  padding-left: 5%;-->
+                        <!--    padding-right: 5%;">-->
+                        <!--                            <div class="click-button">-->
+                        <!--                                &lt;!&ndash; Left button &ndash;&gt;-->
+                        <!--                                <a href="https://gelearthur.itch.io/group16reelitin" target="_blank" rel="noopener noreferrer">-->
+                        <!--                                    <i class="fa-brands fa-itch-io" style="font-size: 28px;"></i>-->
+                        <!--                                    <i style="font-size: 22px;">Check it on itch!</i>-->
+                        <!--                                </a>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="click-button">-->
+                        <!--                                &lt;!&ndash; Right button &ndash;&gt;-->
+                        <!--                                <a href="https://github.com/Juddy2403/ReelItIn" target="_blank"-->
+                        <!--                                   rel="noopener noreferrer">-->
+                        <!--                                    <i class="icon-github" style="font-size: 28px;"></i>-->
+                        <!--                                    <i style="font-size: 22px;">Check it on github!</i>-->
+                        <!--                                </a>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <div class="tags-container">
+                            <span>Unreal Engine 5</span>
+                            <span>C++ & Blueprints</span>
+                            <span>Work in progress</span>
+                            <span>Group Project</span>
+                            <span>Game Design</span>
+                            <span>Single player</span>
+                            <span>RPG</span>
+                            <span>Technical Doc</span>
+                            <span>Project Management</span>
+                            <span>Production Planning</span>
+                            <span>Task Management</span>
+                            <!-- Add more tags as needed -->
+                        </div>
+                        <section id="about"></section>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="desc">
+                                <h2>About</h2>
+                                <p>Rooftop Garden is my latest project that is currently under development. It is being
+                                    worked on
+                                    by a team of 7 students, including myself, over the course of one semester.
+                                </p>
+                                <p>The game features a cozy first-person gardening simulation in an uncanny
+                                    post-apocalyptic setting.
+                                    The goal is to survive as many days as you can while feeding yourself and your
+                                    unsettling companion,
+                                    the omnivorous plant.</p>
+                                <p class="read hover-underline"><a
+                                        href="https://github.com/Juddy2403/RooftopGarden/releases/download/V0.1/LatestBuild.zip"
+                                        target="_blank" rel="noopener noreferrer">
+                                    <strong>Download demo</strong>
+                                </a></p>
+                                <!--                                <h2>Trailer</h2>-->
+                                <!--                                <iframe class="zoom-on-hover" style="aspect-ratio: 16/9;"-->
+                                <!--                                        src="https://www.youtube.com/embed/xz8vwJNW9XA?si=nWyuGuaH32Ls9kRI"-->
+                                <!--                                        title="YouTube video player" frameborder="0"-->
+                                <!--                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"-->
+                                <!--                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+                                <!--                                <div style="margin-top: 20px"></div>-->
+                                <section id="whatidid"></section>
+                                <h2>What I did</h2>
+                                <h3>Tech Lead</h3>
+                                <p>As the main programmer in the team, I took on the responsibility of leading the
+                                    technical
+                                    aspects of the game. This involves taking care of the <a
+                                            href="files/TechDoc-Rooftop.pdf" target="_blank">Tech Document</a>
+                                    and implementing the foundation and main systems of the game. Most of the features
+                                    of the game
+                                    are implemented by me.</p>
+
+                                <h3>Inventory System</h3>
+                                <p>
+                                    The inventory system wokrs as a C++ component that is contained in the Player class,
+                                    and is referenced
+                                    by most, if not all, of the interactables.
+                                </p>
+                                <p>
+                                    Following a data-oriented design, each item is tracked using an ID (FName in Unreal)
+                                    and its information can be found inside a data table.
+                                </p>
+                                <p style="text-align: center;">
+                                    <img src="images/rooftop-inventory.png"
+                                         alt="Description" class="zoom-on-hover"
+                                         style="max-width:60%; margin-top:10px; border-radius: 10px;">
+                                </p>
+                                <h3>Farming Plot</h3>
+                                <p>The farming plot is an essential actor for the farming mechanic. It manages plant
+                                    growth, planting seeds, collecting produce, and will soon also include ploughing the
+                                    soil, weeding and collecting the bugs.</p>
+                                <p>It is composed of a FarmingPlot actor and a PlantGrowth component, which are both
+                                    implemented
+                                    in C++. Following in the steps of the inventory system, each seed item ID can be
+                                    used to find
+                                    the information about the plant inside a data table.</p>
+                                <p>
+                                    <img src="images/rooftop-plant.png"
+                                         alt="Description" class="zoom-on-hover"
+                                         style="max-width:100%; margin-top:10px; border-radius: 10px;">
+                                </p>
+
+                                <h3>Work in progress</h3>
+                                <p>Other systems/components that I'm currently working on include:</p>
+                                <ul>
+                                    <li>hunger component (for the plant and the player)
+                                    </li>
+                                    <li>scalable tool system that enables easily adding more tools through an interface</li>
+                                    <li>optimised C++ raycast for checking currently interactable items within the player's interaction range</li>
+                                    <li>highlight component for interactables</li>
+                                    <li>tutorial component that can easily be turned off for controls popup</li>
+                                    <li>UI implementation</li>
+                                </ul>
+                                <p style="display: flex; gap: 10px; justify-content: center;">
+                                    <img class="zoom-on-hover"
+                                         src="images/Rooftop%20Garden%20First%20Pitch.jpg"
+                                         alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
+                                    <img class="zoom-on-hover"
+                                         src="images/Rooftop%20Garden%20First%20Pitch%20(1).jpg"
+                                         alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
+                                </p>
+                                <p>
+                                    <img src="images/Rooftop%20Garden%20First%20Pitch%20(2).jpg"
+                                         alt="Description" class="zoom-on-hover"
+                                         style="max-width:100%; margin-top:10px; border-radius: 10px;">
+                                </p>
+                                <div style="margin-top: 120px;"></div>
+                                <section id="theteam"></section>
+                                <h2 class="text-center" style="padding-top: 30px;">The team</h2>
+                                <h3 class="text-center">Producer & Team Lead</h3>
+                                <div class="tags-container" style="padding-bottom: 20px; padding-top: 0px;">
+                                    <p class="click-button" style="margin: 10px">
+                                        <a href="https://www.linkedin.com/in/cennet-gizmen-785ba6252/" target="_blank"
+                                           rel="noopener noreferrer">
+                                            Cennet Gizmen
+                                        </a>
+                                    </p>
+                                </div>
+                                <h3 class="text-center">Tech Lead</h3>
+                                <div class="tags-container" style="padding-bottom: 20px; padding-top: 0px;">
+                                    <p class="click-button" style="margin: 10px">
+                                        <a href="https://www.linkedin.com/in/ioana-raileanu-147725252" target="_blank"
+                                           rel="noopener noreferrer">
+                                            Ioana Raileanu
+                                        </a>
+                                    </p>
+                                </div>
+                                <h3 class="text-center">Game Design</h3>
+                                <div class="tags-container" style="padding-bottom: 10px; padding-top: 0px;">
+                                    <p class="click-button" style="margin: 10px">
+                                        <a href="https://www.linkedin.com/in/matias-lempinen-9a31392a3/" target="_blank" rel="noopener noreferrer">
+                                            Matias Lempinen
+                                        </a>
+                                    </p>
+                                </div>
+                                <h3 class="text-center">Art</h3>
+                                <h4 class="text-center" style="margin-bottom:0;">Art Lead - Tech & Style</h4>
+                                <div class="tags-container" style="padding-bottom: 10px; padding-top: 0px;">
+                                    <p class="click-button" style="margin: 10px">
+                                        <a href="https://www.linkedin.com/in/isac-savolainen-6a7581294/" target="_blank" rel="noopener noreferrer">
+                                            Issa Savolaınen
+                                        </a>
+                                    </p>
+                                </div>
+                                <h4 class="text-center" style="margin-bottom:0;">3D Artist</h4>
+                                <div class="tags-container" style="padding-bottom: 10px; padding-top: 0px;">
+                                    <p class="click-button" style="margin: 10px">
+                                        <a href="https://www.linkedin.com/in/tanja-kakko-366057252/" target="_blank" rel="noopener noreferrer">
+                                            Tanja Kakko
+                                        </a>
+                                    </p>
+                                </div>
+                                <h4 class="text-center" style="margin-bottom:0;">UI Design</h4>
+                                <div class="tags-container" style="padding-bottom: 10px; padding-top: 0px;">
+                                    <p class="click-button" style="margin: 10px">
+                                        <a href="https://www.linkedin.com/in/ngtuyen610/" target="_blank" rel="noopener noreferrer">
+                                            Tuyen Nguyen
+                                        </a>
+                                    </p>
+                                </div>
+                                <h4 class="text-center" style="margin-bottom:0;">Concept & 3D Artist</h4>
+                                <div class="tags-container" style="padding-bottom: 10px; padding-top: 0px;">
+                                    <p class="click-button" style="margin: 10px;">
+                                        <a href="https://www.vivivit.com/furufuru?tab=works" target="_blank" rel="noopener noreferrer">
+                                            Akari Furuhashi
+                                        </a>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="contact"></section>
+    <div id="footer-placeholder"></div>
+    <footer>
+        <script>
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+                });
+        </script>
+    </footer>
+
+</div>
+
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="js/jquery.waypoints.min.js"></script>
+<!-- Owl Carousel -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- Magnific Popup -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+
+<!-- Main JS (Do not remove) -->
+<script src="js/main.js"></script>
+<div id="cursor-light"></div>
+<script src="js/cursor-light.js"></script>
+<div id="img-modal" style="display:none;">
+  <span id="close-modal" style="
+    position: absolute; top: 20px; right: 40px; font-size: 40px; color: #fff; cursor: pointer; z-index: 1001;">&times;</span>
+    <img id="modal-img" src="" alt="Preview" style="
+    display: block; max-width: 90vw; max-height: 90vh; margin: 60px auto; border-radius: 12px; box-shadow: 0 4px 30px rgba(0,0,0,0.4);">
+</div>
+</body>
+</html>
+
