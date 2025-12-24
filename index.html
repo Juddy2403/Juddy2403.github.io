@@ -595,14 +595,19 @@
 </footer>
 </div>
 <script>
-    window.addEventListener('beforeunload', function () {
-        localStorage.setItem('scrollPos', window.scrollY);
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            sessionStorage.setItem('scrollPos', window.scrollY);
+        });
     });
-    window.addEventListener('DOMContentLoaded', function () {
-        const scrollPos = localStorage.getItem('scrollPos');
+    // window.addEventListener('beforeunload', function () {
+    //     localStorage.setItem('scrollPos', window.scrollY);
+    // });
+    document.addEventListener('DOMContentLoaded', function () {
+        const scrollPos = sessionStorage.getItem('scrollPos');
         if (scrollPos) {
             window.scrollTo(0, parseInt(scrollPos, 10));
-            localStorage.removeItem('scrollPos');
+            sessionStorage.removeItem('scrollPos');
         }
     });
     document.addEventListener('DOMContentLoaded', () => {
