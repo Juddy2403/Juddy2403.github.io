@@ -1,0 +1,63 @@
+<!-- draw.io diagram with fullscreen toggle -->
+<div id="diagramWrapper" style="position:relative; width:100%;">
+    <button id="fullscreenBtn" onclick="toggleFullscreen()"
+            style="position:absolute; top:8px; right:8px; z-index:10;
+            color:#efefef;
+           display:flex; align-items:center; gap:6px;
+           padding:6px 12px; font-size:14px; cursor:pointer;
+           background:#212121; border-radius: 10px;
+           box-shadow:0 1px 3px rgba(227,227,227,0.1);">
+        <svg id="expandIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <polyline points="9 21 3 21 3 15"></polyline>
+            <line x1="21" y1="3" x2="14" y2="10"></line>
+            <line x1="3" y1="21" x2="10" y2="14"></line>
+        </svg>
+        <svg id="collapseIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <polyline points="4 14 10 14 10 20"></polyline>
+            <polyline points="20 10 14 10 14 4"></polyline>
+            <line x1="14" y1="10" x2="21" y2="3"></line>
+            <line x1="3" y1="21" x2="10" y2="14"></line>
+        </svg>
+        <span id="btnLabel">Fullscreen</span>
+    </button>
+
+    <iframe id="diagramFrame" frameborder="0"
+            style="width:100%; height:400px; display:block; border-radius: 10px;"
+            src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Rooftop%20Garden%20-%20UML%20Diagram.drawio&dark=auto#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1s7Gv6uIp4aPSLKDzXStIjx451a42lJ76%26export%3Ddownload">
+    </iframe>
+</div>
+
+<script>
+    function toggleFullscreen() {
+        const wrapper = document.getElementById('diagramWrapper');
+        if (!document.fullscreenElement) {
+            wrapper.requestFullscreen().catch(err => {
+                alert(`Error attempting fullscreen: ${err.message}`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    }
+
+    // Update button label/behavior when fullscreen state changes
+    // (covers cases where user presses Esc to exit)
+    document.addEventListener('fullscreenchange', () => {
+        const iframe = document.getElementById('diagramFrame');
+        const label = document.getElementById('btnLabel');
+        const expandIcon = document.getElementById('expandIcon');
+        const collapseIcon = document.getElementById('collapseIcon');
+
+        if (document.fullscreenElement) {
+            label.textContent = 'Exit Fullscreen';
+            expandIcon.style.display = 'none';
+            collapseIcon.style.display = 'inline';
+            iframe.style.height = '100%'; // fill the screen while fullscreen
+        } else {
+            label.textContent = 'Fullscreen';
+            expandIcon.style.display = 'inline';
+            collapseIcon.style.display = 'none';
+            iframe.style.height = '600px'; // restore normal height
+        }
+    });
+</script>

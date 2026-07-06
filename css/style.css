@@ -2449,3 +2449,38 @@ h1, h2, h3, h4, h5, h6 a{
     background-color: #cfa3f3; /* the exact color you want */
 }
 
+.code-dropdown {
+    color: #cfa3f3;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 12px;
+}
+
+.code-dropdown summary {
+    padding: 5px 12px;
+    cursor: pointer;
+    background: #2a2a2a;
+    list-style: none; /* removes default triangle marker */
+}
+
+.code-dropdown summary::-webkit-details-marker {
+    display: none; /* removes default triangle in Chrome/Safari */
+}
+
+.code-dropdown summary::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.15s ease;
+}
+
+.code-dropdown[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.code-dropdown pre,
+.code-dropdown code,
+.code-dropdown .token {
+    font-size: 13px !important;
+    line-height: 1.5;
+}

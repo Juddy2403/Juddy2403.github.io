@@ -40,10 +40,12 @@
     <link rel="stylesheet" href="css/magnific-popup.css">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/prism.css">
 
 
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="js/prism.js"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
@@ -73,8 +75,14 @@
             .then(html => {
                 document.getElementById('sidebar-container').innerHTML = html;
                 document.getElementById('sidebar-table-content').innerHTML = `
+
                        <a href="#about"> <span>About</span></a>
             <a href="#whatidid"> <span>What I did</span></a>
+            <a href="#teamlead"><span style="font-size:18px; font-weight:100;">- Team Lead</span></a>
+            <a href="#uml"><span style="font-size:18px; font-weight:100;">- UML Diagram</span></a>
+            <a href="#save"><span style="font-size:18px; font-weight:100;">- Save System</span></a>
+            <a href="#inventory"><span style="font-size:18px; font-weight:100;">- Inventory System</span></a>
+            <a href="#optimizations"><span style="font-size:18px; font-weight:100;">- Optimizations</span></a>
             <a href="#theteam"> <span>The team</span></a>
             <a href="#contact"> <span>Contact</span></a>
                     `;
@@ -134,132 +142,307 @@
                 <div class="col-md-12">
                     <div class="work-entry animate-box">
                         <p class="work-img"
-                           style="background-image: url(images/RooftopGarden2.jpg);">
+                           style="background-image: url(images/Rooftop-Header.jpg);">
                         </p>
-
-                        <!--                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;  padding-left: 5%;-->
-                        <!--    padding-right: 5%;">-->
-                        <!--                            <div class="click-button">-->
-                        <!--                                &lt;!&ndash; Left button &ndash;&gt;-->
-                        <!--                                <a href="https://gelearthur.itch.io/group16reelitin" target="_blank" rel="noopener noreferrer">-->
-                        <!--                                    <i class="fa-brands fa-itch-io" style="font-size: 28px;"></i>-->
-                        <!--                                    <i style="font-size: 22px;">Check it on itch!</i>-->
-                        <!--                                </a>-->
-                        <!--                            </div>-->
-                        <!--                            <div class="click-button">-->
-                        <!--                                &lt;!&ndash; Right button &ndash;&gt;-->
-                        <!--                                <a href="https://github.com/Juddy2403/ReelItIn" target="_blank"-->
-                        <!--                                   rel="noopener noreferrer">-->
-                        <!--                                    <i class="icon-github" style="font-size: 28px;"></i>-->
-                        <!--                                    <i style="font-size: 22px;">Check it on github!</i>-->
-                        <!--                                </a>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;  padding-left: 5%;
+                            padding-right: 5%;">
+                            <div class="click-button">
+                                <!-- Left button -->
+                                <a href="https://hymys.itch.io/rooftop-garden" target="_blank"
+                                   rel="noopener noreferrer">
+                                    <i class="fa-brands fa-itch-io" style="font-size: 28px;"></i>
+                                    <i style="font-size: 22px;">Check it on itch!</i>
+                                </a>
+                            </div>
+                            <div class="click-button">
+                                <!-- Right button -->
+                                <a href="https://github.com/Juddy2403/RooftopGarden" target="_blank"
+                                   rel="noopener noreferrer">
+                                    <i class="icon-github" style="font-size: 28px;"></i>
+                                    <i style="font-size: 22px;">Check it on github!</i>
+                                </a>
+                            </div>
+                        </div>
                         <div class="tags-container">
                             <span>Unreal Engine 5</span>
                             <span>C++ & Blueprints</span>
-                            <span>Work in progress</span>
                             <span>Group Project</span>
-                            <span>Game Design</span>
                             <span>Single player</span>
-                            <span>RPG</span>
+                            <span>Farming Simulator</span>
                             <span>Technical Doc</span>
-                            <span>Project Management</span>
-                            <span>Production Planning</span>
-                            <span>Task Management</span>
+                            <span>Game Design</span>
+                            <span>Team Lead</span>
                             <!-- Add more tags as needed -->
                         </div>
                         <section id="about"></section>
                         <div class="col-md-10 col-md-offset-1">
                             <div class="desc">
                                 <h2>About</h2>
-                                <p>Rooftop Garden is my latest project that is currently under development. It is being
-                                    worked on
-                                    by a team of 7 students, including myself, over the course of one semester.
+                                <p>Rooftop Garden is a cozy gardening simulator within a post-apocalyptic setting. One thing that
+                                    makes it stand out from the rest is your uncanny companion: the omnivorous plant, which you
+                                    must feed before it feeds on you.
                                 </p>
-                                <p>The game features a cozy first-person gardening simulation in an uncanny
-                                    post-apocalyptic setting.
-                                    The goal is to survive as many days as you can while feeding yourself and your
-                                    unsettling companion,
-                                    the omnivorous plant.</p>
+                                <p>Inspired by Stardew Valley and Garden Life, it’s a first-person game with a day-night cycle where
+                                    you must take care of your crops and manage your resources.  </p>
+                                <p>Currently, this project is my most well-structured </p>
+                                <p>As the only programmer in the group, I wrote the entire code base for the project (except for the
+                                    ladder mechanic, which was programmed by Issa). This is currently my best work in terms of a clean, maintainable, and data-oriented codebase. </p>
                                 <p class="read hover-underline"><a
-                                        href="https://github.com/Juddy2403/RooftopGarden/releases/download/V0.1/LatestBuild.zip"
+                                        href="https://hymys.itch.io/rooftop-garden"
                                         target="_blank" rel="noopener noreferrer">
-                                    <strong>Download demo</strong>
+                                    <strong>Download on itch</strong>
                                 </a></p>
-                                <!--                                <h2>Trailer</h2>-->
-                                <!--                                <iframe class="zoom-on-hover" style="aspect-ratio: 16/9;"-->
-                                <!--                                        src="https://www.youtube.com/embed/xz8vwJNW9XA?si=nWyuGuaH32Ls9kRI"-->
-                                <!--                                        title="YouTube video player" frameborder="0"-->
-                                <!--                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"-->
-                                <!--                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-                                <!--                                <div style="margin-top: 20px"></div>-->
+                                <h2>Gameplay Video</h2>
+                                <iframe class="zoom-on-hover" style="aspect-ratio: 16/9;"
+                                        src="https://www.youtube.com/embed/1tnNpLxrDmI?si=V9iCGrpwOWISG1Ql"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <div style="margin-top: 20px"></div>
                                 <section id="whatidid"></section>
                                 <h2>What I did</h2>
-                                <h3>Tech Lead</h3>
-                                <p>As the main programmer in the team, I took on the responsibility of leading the
-                                    technical
-                                    aspects of the game. This involves taking care of the <a
-                                            href="files/TechDoc-Rooftop.pdf" target="_blank">Tech Document</a>
-                                    and implementing the foundation and main systems of the game. Most of the features
-                                    of the game
-                                    are implemented by me.</p>
 
-                                <h3>Inventory System</h3>
+                                <p>Before I mention the technical details of my work, I will start with the non-technical ones.</p>
+                                <section id="teamlead"></section>
+
+                                <h3>Team Lead</h3>
+                                <p>I was a central figure in the group, since many details had to go through me as the programmer.
+                                    Before I knew it, I was assigned as the Team Leader. </p>
+                                <p>As such, I played an important role discussing design choices, helping my teammates out,
+                                    coordinating the technical direction of the project, but also managing the structure and
+                                    organization of the group and defining the documentation of the project. </p>
+                                <p>The most notable document I worked on would, of course, be the <a
+                                        href="files/TechDoc-Rooftop.pdf" target="_blank">Tech Document</a>.</p>
+                                <p>Now, onto more technical matters...</p>
+                                <section id="uml"></section>
+
+                                <h3>Project UML Diagram</h3>
                                 <p>
-                                    The inventory system wokrs as a C++ component that is contained in the Player class,
-                                    and is referenced
-                                    by most, if not all, of the interactables.
+                                    The following is a full UML diagram of the project.
                                 </p>
+                                <iframe
+                                        src="rooftop-uml-diagram.html"
+                                        width="100%"
+                                        height="500"
+                                        style="border:none;">
+                                </iframe>
+                                <p>Below are some of the project's highlights, and some of my most proud work.</p>
+                                <section id="save"></section>
+
+                                <h3>Save System</h3>
+                                <p>The save system represents the most intricate component of the game. Daily, the
+                                    condition of every actor eligible for saving is recorded in a dedicated save game
+                                    object. Upon game launch, if a save game object is present, all previously saved
+                                    actors are reinstated into the game.</p>
+                                <p>Since there are objects (like pick-ups) that can be moved or destroyed, the system will
+                                    always check for the existing saveable objects first before loading the saved ones. This is done by
+                                    checking the objects’ global unique ID.</p>
+                                <details class="code-dropdown">
+                                    <summary>Check Code</summary>
+                                    <pre><code class="language-cpp">
+	for (auto& Actor : ExistingSaveableActors)
+	{
+		FGuid SaveID = ISaveableInterface::Execute_GetSaveID(Actor);
+		// Loading data for existing saved actors
+		if (SavedActors.Contains(SaveID))
+		{
+			FSaveStruct& SaveData = SavedActors[SaveID];
+			LoadExistingActorState(Actor, SaveData);
+			ActorMap.Add(SaveID, Actor);
+			ActorsToSpawn.Remove(SaveID);
+		}
+		// Destroying current actors that are not in the save data
+		else Actor->Destroy();
+	}
+
+	// Spawning the saved actors that don't exist in the world
+	for (auto& Actor : ActorsToSpawn)
+	{
+		FSaveStruct SaveData = Actor.Value;
+		FGuid SaveID = Actor.Key;
+		AActor* SpawnedActor = SpawnFromSaveData(SaveData);
+
+		LoadSpawnedActor(SpawnedActor, SaveID, SaveData);
+		ActorMap.Add(SaveID, SpawnedActor);
+	}
+                                    </code></pre>
+                                </details>
+                                <p>The system is very modular, with each saveable actor implementing its own
+                                    save and load methods through the ISaveable interface. Components can also be saved the same
+                                    way using the ISaveableComponent interface. </p>
+                                <p>The components of all saveable objects are checked for the interface after the owner’s data is
+                                    restored/saved, and their load/save method is called. This happens within the save game object,
+                                    in the Load/Save methods.</p>
+                                <details class="code-dropdown">
+                                    <summary>Check Code</summary>
+                                    <pre><code class="language-cpp">
+void USaveGameObject::LoadExistingActorState(AActor*& Actor, FSaveStruct& SaveData)
+{
+	ISaveableInterface::Execute_LoadState(Actor, SaveData.SaveData);
+	Actor->SetActorTransform(SaveData.Transform);
+
+	if (SaveData.ComponentData.IsEmpty()) return;
+
+	auto SaveableComponents = Actor->GetComponentsByInterface(USaveableComponentInterface::StaticClass());
+	for (auto& Component : SaveableComponents)
+	{
+		FGuid ComponentSaveID = ISaveableComponentInterface::Execute_GetComponentSaveID(Component);
+		if (SaveData.ComponentData.Contains(ComponentSaveID))
+		{
+			const FComponentSaveStruct& ComponentSaveData = SaveData.ComponentData[ComponentSaveID];
+			ISaveableComponentInterface::Execute_LoadComponentState(Component, ComponentSaveData.SaveData);
+		}
+	}
+}
+                                    </code></pre>
+                                </details>
+                                <p>Relationships between saved objects are also restored one frame after loading, using the same
+                                    GUIDs. </p>
+                                <details class="code-dropdown">
+                                    <summary>Check Code</summary>
+                                    <pre><code class="language-cpp">
+for (auto& ActorPair : ActorMap)
+		{
+			ISaveableInterface::Execute_RestoreRelationships(ActorPair.Value, ActorMap);
+		}
+
+		AActor* PlayerActor = UGameplayStatics::GetPlayerPawn(GWorld, 0);
+		auto SaveableComponents = PlayerActor->GetComponentsByInterface(USaveableComponentInterface::StaticClass());
+		for (auto& Component : SaveableComponents)
+		{
+			ISaveableComponentInterface::Execute_RestoreRelationships(Component, ActorMap);
+		}
+                                    </code></pre>
+                                </details>
                                 <p>
-                                    Following a data-oriented design, each item is tracked using an ID (FName in Unreal)
-                                    and its information can be found inside a data table.
-                                </p>
-                                <p style="text-align: center;">
-                                    <img src="images/rooftop-inventory.png"
-                                         alt="Description" class="zoom-on-hover"
-                                         style="max-width:60%; margin-top:10px; border-radius: 10px;">
-                                </p>
-                                <h3>Farming Plot</h3>
-                                <p>The farming plot is an essential actor for the farming mechanic. It manages plant
-                                    growth, planting seeds, collecting produce, and will soon also include ploughing the
-                                    soil, weeding and collecting the bugs.</p>
-                                <p>It is composed of a FarmingPlot actor and a PlantGrowth component, which are both
-                                    implemented
-                                    in C++. Following in the steps of the inventory system, each seed item ID can be
-                                    used to find
-                                    the information about the plant inside a data table.</p>
-                                <p>
-                                    <img src="images/rooftop-plant.png"
+                                    <img src="images/rooftop-saveSys.jpg"
                                          alt="Description" class="zoom-on-hover"
                                          style="max-width:100%; margin-top:10px; border-radius: 10px;">
                                 </p>
+                                <section id="inventory"></section>
 
-                                <h3>Work in progress</h3>
-                                <p>Other systems/components that I'm currently working on include:</p>
+                                <h3>Inventory System</h3>
+                                <p>The system is flexible, data-driven and supports configurable inventory
+                                    sizes, item stacking, and quick item switching. Each inventory slot stores an item
+                                    ID, quantity, type, and an actor reference, allowing held items to be visually
+                                    represented and interacted with directly.</p>
+                                <p>Item pickup prioritizes stacking existing items before filling empty slots, with
+                                    clear fallback logic when the inventory is full. Item metadata is retrieved from a
+                                    centralized Data Table, separating game data from inventory logic for improved
+                                    maintainability and scalability.</p>
+                                <p>The system is fully implemented in C++.</p>
+                                <details class="code-dropdown">
+                                    <summary>Check Code</summary>
+                                    <pre><code class="language-cpp">
+bool UInventoryComponent::AddToInventory(const FName& ItemID, int32 Quantity, AActor* ItemActor)
+{
+	FItemStruct ItemStruct;
+	const bool Success = UUtilitiesLibrary::GetActiveItemInfoStructFromID(ItemID, ItemStruct);
+	if (!Success) return false;
+	int FirstEmptySlotIndex = -1;
+	// Tools don't stack, so if active is empty that's where it should be placed
+	if (ItemStruct.ItemType == EItemType::Tool && Content[ActiveSlot].ItemID.IsNone())
+	{
+		FirstEmptySlotIndex = ActiveSlot;
+	}
+	else
+	{
+		for (int i{Content.Num() - 1}; i >= 0; --i)
+		{
+			// Record the first empty slot we find
+			if (Content[i].ItemID.IsNone()) FirstEmptySlotIndex = i;
+			// Tools don't stack, we just need the first empty slot idx
+			if (ItemStruct.ItemType == EItemType::Tool) continue;
+			// Check if there is one of these items in the inventory already, if so add to that stack
+			if (Content[i].ItemID == ItemID)
+			{
+				// Do not attach an extra item since you already have it
+				SetItemInfoContent({ItemID, Quantity, ItemActor, ItemStruct.ItemType}, i, false);
+				OnInventoryChanged.Broadcast(i);
+				return true;
+			}
+		}
+	}
+	if (FirstEmptySlotIndex == -1)
+	{
+		OnAddInventoryFailed.Broadcast(FText::FromString("No inventory space"));
+		return false; // inventory full
+	}
+
+	// If the active slot is empty add item there, otherwise use the first empty slot found
+	int SlotToAdd = FirstEmptySlotIndex;
+	if (Content[ActiveSlot].ItemID.IsNone()) SlotToAdd = ActiveSlot;
+	SetItemInfoContent({ItemID, Quantity, ItemActor, ItemStruct.ItemType}, SlotToAdd);
+	OnInventoryChanged.Broadcast(SlotToAdd);
+	return true;
+}
+                                    </code></pre>
+                                </details>
+                                <p>
+                                    <img src="images/rooftop-inventory.jpg"
+                                         alt="Description" class="zoom-on-hover center-block"
+                                         style="max-width:80%; margin-top:10px; border-radius: 10px;">
+                                </p>
+                                <section id="optimizations"></section>
+
+                                <h3>Optimizations</h3>
+                                <p>A good amount of time was spent making sure the technical goals of the project were reached.
+                                    These are the optimization methods I made use of:
+                                </p>
                                 <ul>
-                                    <li>hunger component (for the plant and the player)
+                                    <li>
+                                        Collision override: I built a blueprint utility script to easily remove collision or add simple
+                                        collision (box, capsule) to static meshes. Some meshes (like the shelves and baskets) had
+                                        custom collision made from simple boxes by hand.
                                     </li>
-                                    <li>scalable tool system that enables easily adding more tools through an interface</li>
-                                    <li>optimised C++ raycast for checking currently interactable items within the player's interaction range</li>
-                                    <li>highlight component for interactables</li>
-                                    <li>tutorial component that can easily be turned off for controls popup</li>
-                                    <li>UI implementation</li>
+                                    <li>
+                                        LODs: The utility blueprint also has a method for generating LODs for meshes that have
+                                        less than three.
+                                    </li>
+                                    <li>
+                                        Light complexity: using the GPU Lightmass plugin, the light was baked into virtual
+                                        textures, light sources were minimized and all of them, except for the sun and moon,
+                                        were made static. For reference, here is a before and after:
+                                    </li>
                                 </ul>
                                 <p style="display: flex; gap: 10px; justify-content: center;">
                                     <img class="zoom-on-hover"
-                                         src="images/Rooftop%20Garden%20First%20Pitch.jpg"
+                                         src="images/rooftop-light1.jpg"
                                          alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
                                     <img class="zoom-on-hover"
-                                         src="images/Rooftop%20Garden%20First%20Pitch%20(1).jpg"
+                                         src="images/rooftop-light2.jpg"
                                          alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
                                 </p>
-                                <p>
-                                    <img src="images/Rooftop%20Garden%20First%20Pitch%20(2).jpg"
-                                         alt="Description" class="zoom-on-hover"
-                                         style="max-width:100%; margin-top:10px; border-radius: 10px;">
+                                <ul>
+                                    <li>
+                                        Lumen was disabled, as it messed with the light baking process, and it was also expensive.
+                                    </li>
+                                    <li>
+                                        I also got rid of unnecessary textures and reduced the
+                                        texture sizes according to the required texture resolution view.
+                                    </li>
+                                </ul>
+
+                                <div style="margin-top: 120px;"></div>
+
+                                <p style="display: flex; gap: 10px; justify-content: center;">
+                                    <img class="zoom-on-hover"
+                                         src="images/rooftop-bottom1.jpg"
+                                         alt="Description" style="max-width:60%; margin-top:20px; border-radius: 10px;">
+                                    <img class="zoom-on-hover"
+                                         src="images/rooftop-bottom2.jpg"
+                                         alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
+                                </p>
+                                <p style="display: flex; gap: 10px; justify-content: center;">
+                                    <img class="zoom-on-hover"
+                                         src="images/rooftop-bottom3.jpg"
+                                         alt="Description" style="max-width:60%; margin-top:20px; border-radius: 10px;">
+                                    <img class="zoom-on-hover"
+                                         src="images/rooftop-bottom4.jpg"
+                                         alt="Description" style="max-width:60%; margin-top:10px; border-radius: 10px;">
                                 </p>
                                 <div style="margin-top: 120px;"></div>
+
                                 <section id="theteam"></section>
                                 <h2 class="text-center" style="padding-top: 30px;">The team</h2>
                                 <h3 class="text-center">Producer & Team Lead</h3>
@@ -356,7 +539,6 @@
 <!-- Magnific Popup -->
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/magnific-popup-options.js"></script>
-
 <!-- Main JS (Do not remove) -->
 <script src="js/main.js"></script>
 <div id="cursor-light"></div>
